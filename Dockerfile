@@ -8,4 +8,6 @@ RUN npm install \
 && npm i hexo-cli -g \
   &&  npm run build
 
+COPY /blog/start.sh /
+CMD ["/bin/sh", "/start.sh"]
 

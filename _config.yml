@@ -71,6 +71,13 @@ wordCount:
   postWordCount: true
   min2read: true
   totalCount: true
+postInfo:
+  date: true
+  update: false
+  wordCount: false # 设置文章字数统计为 true.
+  totalCount: false # 设置站点文章总字数统计为 true.
+  min2read: false # 阅读时长.
+  readCount: false # 阅读次数.
 # 是否在首页显示音乐.
 music:
   enable: true
@@ -85,16 +92,22 @@ music:
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: false # 列表默认折叠
   listMaxHeight: # 列表最大高度
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
 # RSS订阅
-# feed:
-#   type: atom
-#   path: atom.xml
-#   limit: 20
-#   hub:
-#   content:
-#   content_limit: 140
-#   content_limit_delim: ' '
-#   order_by: -date
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)

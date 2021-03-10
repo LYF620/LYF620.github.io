@@ -190,3 +190,6 @@ o.p // undefined
 var x = f();
 x // undefined
 ```
+
+送大家一张图，便于记忆：
+![Eric 真帅!](/meme/type.jpg)

@@ -1,11 +1,12 @@
 ---
-title: 开源监控系统部署(一)
+title: Sentry——开源监控系统部署(一)
 date: 2021-03-15 19:17:12
 mathjax: true
 password:
 summary: "错误日志平台"
 tags:
   - 错误日志平台
+  - Sentry
 categories:
 ---
 

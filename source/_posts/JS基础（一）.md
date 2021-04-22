@@ -7,6 +7,7 @@ summary: "回顾JS"
 tags:
   - JS基础
 categories:
+img: "/medias/featureimages/2.jpg"
 ---
 
 ## JS 内置类型

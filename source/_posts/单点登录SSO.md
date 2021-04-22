@@ -8,6 +8,7 @@ tags:
   - 单点登录SSO
   - CAS
 categories:
+img: "/meme/sso.png"
 ---
 
 ## 什么是 单点登录

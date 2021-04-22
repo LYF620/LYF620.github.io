@@ -8,6 +8,7 @@ tags:
   - 错误日志平台
   - Sentry
 categories:
+img: "/medias/featureimages/4.jpg"
 ---
 
 ## 什么是 Sentry

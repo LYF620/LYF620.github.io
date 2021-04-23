@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Eric is here</title>
+  
+  <subtitle>少睡觉多吃饭</subtitle>
+  <link href="https://blog.yfcloud.site/atom.xml" rel="self"/>
+  
+  <link href="https://blog.yfcloud.site/"/>
+  <updated>2021-04-23T08:19:34.457Z</updated>
+  <id>https://blog.yfcloud.site/</id>
+  
+  <author>
+    <name>Eric</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单点登录SSO</title>
+    <link href="https://blog.yfcloud.site/2021/03/16/dan-dian-deng-lu-sso/"/>
+    <id>https://blog.yfcloud.site/2021/03/16/dan-dian-deng-lu-sso/</id>
+    <published>2021-03-16T11:17:12.000Z</published>
+    <updated>2021-04-23T08:19:34.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是-单点登录&quot;&gt;&lt;a href=&quot;#什么是-单点登录&quot; class=&quot;headerlink&quot; title=&quot;什么是 单点登录&quot;&gt;&lt;/a&gt;什么是</summary>
+        
+      
+    
+    
+    
+    
+    <category term="单点登录SSO" scheme="https://blog.yfcloud.site/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95SSO/"/>
+    
+    <category term="CAS" scheme="https://blog.yfcloud.site/tags/CAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sentry——开源监控系统部署(一)</title>
+    <link href="https://blog.yfcloud.site/2021/03/15/sentry-kai-yuan-jian-kong-xi-tong-bu-shu-yi/"/>
+    <id>https://blog.yfcloud.site/2021/03/15/sentry-kai-yuan-jian-kong-xi-tong-bu-shu-yi/</id>
+    <published>2021-03-15T11:17:12.000Z</published>
+    <updated>2021-04-23T08:19:34.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是-Sentry&quot;&gt;&lt;a href=&quot;#什么是-Sentry&quot; class=&quot;headerlink&quot; title=&quot;什么是 Sentry&quot;&gt;&lt;/a&gt;什么是 Sentry&lt;/h2&gt;&lt;p&gt;Sentry</summary>
+        
+      
+    
+    
+    
+    
+    <category term="错误日志平台" scheme="https://blog.yfcloud.site/tags/%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E5%B9%B3%E5%8F%B0/"/>
+    
+    <category term="Sentry" scheme="https://blog.yfcloud.site/tags/Sentry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS基础（一）</title>
+    <link href="https://blog.yfcloud.site/2021/03/10/js-ji-chu-yi/"/>
+    <id>https://blog.yfcloud.site/2021/03/10/js-ji-chu-yi/</id>
+    <published>2021-03-10T11:17:12.000Z</published>
+    <updated>2021-04-23T08:19:34.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JS-内置类型&quot;&gt;&lt;a href=&quot;#JS-内置类型&quot; class=&quot;headerlink&quot; title=&quot;JS 内置类型&quot;&gt;&lt;/a&gt;JS 内置类型&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;JS</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JS基础" scheme="https://blog.yfcloud.site/tags/JS%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快乐开发的必备小知识点</title>
+    <link href="https://blog.yfcloud.site/2021/02/13/kuai-le-kai-fa-de-bi-bei-xiao-zhi-shi-dian/"/>
+    <id>https://blog.yfcloud.site/2021/02/13/kuai-le-kai-fa-de-bi-bei-xiao-zhi-shi-dian/</id>
+    <published>2021-02-12T16:17:12.000Z</published>
+    <updated>2021-04-23T08:19:34.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;oh-my-zsh&quot;&gt;&lt;a href=&quot;#oh-my-zsh&quot; class=&quot;headerlink&quot; title=&quot;oh-my-zsh&quot;&gt;&lt;/a&gt;oh-my-zsh&lt;/h2&gt;&lt;p&gt;对于开发同学来说，一款优秀的终端软件是拥有高效的必备利器。这里我为大家奉上</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高效开发" scheme="https://blog.yfcloud.site/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="item（zsh）" scheme="https://blog.yfcloud.site/tags/item%EF%BC%88zsh%EF%BC%89/"/>
+    
+    <category term="vpn" scheme="https://blog.yfcloud.site/tags/vpn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客建站（小白建站旅程）</title>
+    <link href="https://blog.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/"/>
+    <id>https://blog.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/</id>
+    <published>2021-02-09T11:10:42.000Z</published>
+    <updated>2021-04-23T08:19:34.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;搭建环境&quot;&gt;&lt;a href=&quot;#搭建环境&quot; class=&quot;headerlink&quot; title=&quot;搭建环境&quot;&gt;&lt;/a&gt;搭建环境&lt;/h2&gt;&lt;p&gt;因为 hexo 是基于 node 环境，所以这里我们先安装 node.我本人是使用腾讯云的 centos</summary>
+        
+      
+    
+    
+    
+    
+    <category term="博客 hexo" scheme="https://blog.yfcloud.site/tags/%E5%8D%9A%E5%AE%A2-hexo/"/>
+    
+    <category term="github" scheme="https://blog.yfcloud.site/tags/github/"/>
+    
+  </entry>
+  
+</feed>

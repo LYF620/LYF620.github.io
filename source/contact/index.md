@@ -23,6 +23,6 @@ layout: "contact"
 例如我的博客友链，大家可以加到自己博客里哦：
 
 - **名称：**Eric is here
-- **地址：**https://blog.yfcloud.site
+- **地址：**https://yfcloud.site
 - **简介：**前端扫地僧
-- **头像：**https://blog.yfcloud.site/medias/avatar.jpg
+- **头像：**https://yfcloud.site/medias/avatar.jpg

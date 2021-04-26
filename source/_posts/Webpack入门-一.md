@@ -13,6 +13,7 @@ tags:
   - 巨TM详细
 categories:
 img: "/medias/featureimages/5.jpg"
+sitemap: true
 ---
 
 # 什么是 webpack

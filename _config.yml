@@ -13,7 +13,7 @@ timezone: ""
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://blog.yfcloud.site
+url: https://www.yfcloud.site
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -183,3 +183,4 @@ baidu_url_submit:
 #     show: true
 #   react:
 #     opacity: 0.7
+

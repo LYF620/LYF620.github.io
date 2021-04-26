@@ -8,6 +8,7 @@ tags:
   - JS基础
 categories:
 img: "/medias/featureimages/2.jpg"
+sitemap: true
 ---
 
 ## JS 内置类型

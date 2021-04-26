@@ -3,6 +3,7 @@ title: contact
 date: 2021-02-10 21:30:02
 type: "contact"
 layout: "contact"
+disallow: true
 ---
 
 # 欢迎留言

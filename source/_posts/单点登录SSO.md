@@ -9,6 +9,7 @@ tags:
   - CAS
 categories:
 img: "/meme/sso.png"
+sitemap: true
 ---
 
 ## 什么是 单点登录

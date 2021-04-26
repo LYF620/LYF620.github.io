@@ -9,6 +9,7 @@ tags:
   - Sentry
 categories:
 img: "/medias/featureimages/4.jpg"
+sitemap: true
 ---
 
 ## 什么是 Sentry

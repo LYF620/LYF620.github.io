@@ -157,7 +157,7 @@ deploy:
   - type: git
     repository: https://github.com/LYF620/LYF620.github.io
     branch: main
-    url: www.blog.yfcloud.site
+    url: yfcloud.site
   - type: baidu_url_submitter
 
 baidu_url_submit:

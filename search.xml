@@ -14,11 +14,11 @@
       
         <tags>
             
-            <tag> Import </tag>
-            
             <tag> Mobx </tag>
             
             <tag> 状态机 </tag>
+            
+            <tag> Import </tag>
             
         </tags>
       
@@ -37,11 +37,11 @@
       
         <tags>
             
+            <tag> Import </tag>
+            
             <tag> ECMASCript </tag>
             
             <tag> CommonJS </tag>
-            
-            <tag> Import </tag>
             
         </tags>
       

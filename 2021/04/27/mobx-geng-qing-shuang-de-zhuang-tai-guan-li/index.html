@@ -481,7 +481,7 @@
 <blockquote>
 <p>任何源自应用状态的东西都应该自动地获得。</p>
 </blockquote>
-<p><img src="/meme/login.png" alt="Eric 真帅!"></p>
+<p><img src="/meme/mobx-flow.png" alt="Eric 真帅!"></p>
 <p>React 结合 Mobx 开发的话，个人感觉相比于 Redux 来说，清爽了很多。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而 MobX 提供机制来存储和更新应用状态供 React 使用。对于应用开发中的常见问题，React 和 MobX 都提供了最优和独特的解决方案。React 提供了优化 UI 渲染的机制， 这种机制就是通过使用虚拟 DOM 来减少昂贵的 DOM 变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。</p>
 <h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><h2 id="Observable-state-可观察的状态"><a href="#Observable-state-可观察的状态" class="headerlink" title="Observable state(可观察的状态)"></a>Observable state(可观察的状态)</h2><p>MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。<br>通过使用 @observable 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。</p>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"mobx"</span><span class="token punctuation">;</span>

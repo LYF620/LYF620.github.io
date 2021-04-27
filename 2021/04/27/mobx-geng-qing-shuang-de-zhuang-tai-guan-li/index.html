@@ -562,14 +562,12 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <li>从 observable 获取的值，但是在追踪函数之外</li>
 <li>在异步调用的代码块中读取的 observable</li>
 </ul>
-<h1 id="Mobx-的优势"><a href="#Mobx-的优势" class="headerlink" title="Mobx 的优势"></a>Mobx 的优势</h1><ul>
-<li>简单且可扩展<br>MobX 是状态管理库中侵入性最小的之一。这使得 MobX 的方法不但简单，而且可扩展性也非常好:</li>
-<li>使用类和真正的引用<br>使用 MobX 不需要使数据标准化。这使得库十分适合那些异常复杂的领域模型<br>PS：Mobx 以类的方式管理应用数据，方便快捷，易理解易操作，终极轻量香喷喷！</li>
-<li>保证参照完整性<br>因为数据不需要标准化，所以 MobX 会自动跟踪状态和衍生之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？<br>没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老 bug 已不复存在。作为一个程序员，你可能记不住修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。</li>
-<li>更简单的 actions 更便于维护<br>使用 MobX 修改状态是非常简单的。你只需简单的写出你的目的。MobX 会替你处理好剩下的事情。</li>
-<li>高效的细粒度的可观测性<br>MobX 会构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。<br>简单来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，而不是通过程序来控制。<br>MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷<br>详情可参考<a target="_blank" rel="noopener" href="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254" title="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254">深入剖析 MobX</a></li>
-<li>易操作性<br>MobX 使用原生 javascript 。由于它的侵入性不强，它可以和绝大部分 javascript 库共同使用，而不需要特定的 MobX 风格库。<br>所以你可以继续使用你的路由，数据获取和工具库，比如 react-router、 director、 superagent、 lodash，等等。<br>出于同样的原因，你可以在服务器端和客户端使用它，也可以在 react-native 这样的同构应用中使用。<br>结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新概念。</li>
-</ul>
+<h1 id="Mobx-的优势"><a href="#Mobx-的优势" class="headerlink" title="Mobx 的优势"></a>Mobx 的优势</h1><h2 id="简单且可扩展"><a href="#简单且可扩展" class="headerlink" title="简单且可扩展"></a>简单且可扩展</h2><p>MobX 是状态管理库中侵入性最小的之一。这使得 MobX 的方法不但简单，而且可扩展性也非常好:</p>
+<h2 id="使用类和真正的引用"><a href="#使用类和真正的引用" class="headerlink" title="使用类和真正的引用"></a>使用类和真正的引用</h2><p>使用 MobX 不需要使数据标准化。这使得库十分适合那些异常复杂的领域模型<br>PS：Mobx 以类的方式管理应用数据，方便快捷，易理解易操作，终极轻量香喷喷！</p>
+<h2 id="保证参照完整性"><a href="#保证参照完整性" class="headerlink" title="保证参照完整性"></a>保证参照完整性</h2><p>因为数据不需要标准化，所以 MobX 会自动跟踪状态和衍生之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？<br>没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老 bug 已不复存在。作为一个程序员，你可能记不住修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。</p>
+<h2 id="更简单的-actions-更便于维护"><a href="#更简单的-actions-更便于维护" class="headerlink" title="更简单的 actions 更便于维护"></a>更简单的 actions 更便于维护</h2><p>使用 MobX 修改状态是非常简单的。你只需简单的写出你的目的。MobX 会替你处理好剩下的事情。</p>
+<h2 id="高效的细粒度的可观测性"><a href="#高效的细粒度的可观测性" class="headerlink" title="高效的细粒度的可观测性"></a>高效的细粒度的可观测性</h2><p>MobX 会构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。<br>简单来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，而不是通过程序来控制。<br>MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷<br>详情可参考<a target="_blank" rel="noopener" href="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254" title="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254">深入剖析 MobX</a></p>
+<h2 id="易操作性"><a href="#易操作性" class="headerlink" title="易操作性"></a>易操作性</h2><p>MobX 使用原生 javascript 。由于它的侵入性不强，它可以和绝大部分 javascript 库共同使用，而不需要特定的 MobX 风格库。<br>所以你可以继续使用你的路由，数据获取和工具库，比如 react-router、 director、 superagent、 lodash，等等。<br>出于同样的原因，你可以在服务器端和客户端使用它，也可以在 react-native 这样的同构应用中使用。<br>结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新概念。</p>
 <h1 id="使用-Mobx，工作时间减半，快乐加倍"><a href="#使用-Mobx，工作时间减半，快乐加倍" class="headerlink" title="使用 Mobx，工作时间减半，快乐加倍"></a>使用 Mobx，工作时间减半，快乐加倍</h1><h1 id="它真的超级简单、超级快！棒极了！千万不要错过！"><a href="#它真的超级简单、超级快！棒极了！千万不要错过！" class="headerlink" title="它真的超级简单、超级快！棒极了！千万不要错过！"></a>它真的超级简单、超级快！棒极了！千万不要错过！</h1>
                 
             </div>

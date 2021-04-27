@@ -2,6 +2,7 @@
 title: 单点登录SSO
 date: 2021-03-16 19:17:12
 mathjax: true
+cover: true
 password:
 summary: "单点登录SSO"
 tags:

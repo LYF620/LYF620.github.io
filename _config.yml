@@ -158,7 +158,7 @@ deploy:
     repository: https://github.com/LYF620/LYF620.github.io
     branch: main
     url: yfcloud.site
-  - type: baidu_url_submitter
+  # - type: baidu_url_submitter
 
 baidu_url_submit:
   count: 100

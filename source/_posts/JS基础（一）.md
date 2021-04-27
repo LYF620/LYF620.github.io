@@ -3,6 +3,7 @@ title: JS基础（一）
 date: 2021-03-10 19:17:12
 mathjax: true
 password:
+cover: true
 summary: "回顾JS"
 tags:
   - JS基础

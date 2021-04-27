@@ -2,7 +2,7 @@
 title: require && import
 date: 2021-04-26 11:30
 top: false
-cover: false
+cover: true
 toc: true
 mathjax: true
 password:

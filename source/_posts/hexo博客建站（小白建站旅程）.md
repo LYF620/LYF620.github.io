@@ -7,6 +7,7 @@ tags:
 summary: "一篇为小白同伴记录博客建站过程"
 img: "/medias/featureimages/1.jpg"
 sitemap: true
+cover: true
 ---
 
 ## 搭建环境

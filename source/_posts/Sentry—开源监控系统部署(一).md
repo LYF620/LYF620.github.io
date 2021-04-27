@@ -4,6 +4,7 @@ date: 2021-03-15 19:17:12
 mathjax: true
 password:
 summary: "错误日志平台"
+cover: true
 tags:
   - 错误日志平台
   - Sentry

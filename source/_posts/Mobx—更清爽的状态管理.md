@@ -10,7 +10,7 @@ summary: 状态管理
 tags:
   - Mobx
   - 状态机
-  - Import
+  - 快乐星球
 categories:
 img: "/medias/featureimages/7.jpg"
 sitemap: true

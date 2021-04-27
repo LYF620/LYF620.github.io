@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo博客建站（小白建站旅程）, 前端 Eric 多睡觉 少吃饭">
+    <meta name="keywords" content="Mobx—工作时间减半，快乐加倍！, 前端 Eric 多睡觉 少吃饭">
     <meta name="description" content="少睡觉 多吃饭 前端 coding">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo博客建站（小白建站旅程） | Eric is here</title>
+    <title>Mobx—工作时间减半，快乐加倍！ | Eric is here</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo博客建站（小白建站旅程）</h1>
+                    <h1 class="description center-align post-title">Mobx—工作时间减半，快乐加倍！</h1>
                 </div>
             </div>
         </div>
@@ -412,12 +412,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                                <span class="chip bg-color">博客 hexo</span>
+                            <a href="/tags/Import/">
+                                <span class="chip bg-color">Import</span>
                             </a>
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/Mobx/">
+                                <span class="chip bg-color">Mobx</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/">
+                                <span class="chip bg-color">状态机</span>
                             </a>
                         
                     </div>
@@ -432,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-04-27
                 </div>
                 
 
@@ -446,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    714
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -473,47 +477,100 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><p>因为 hexo 是基于 node 环境，所以这里我们先安装 node.我本人是使用腾讯云的 centos 搭建，所以这里选择使用 yum.这里我们先安装 EPEL 库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> yum <span class="token function">install</span> epel-release
-</code></pre>
-<p>再从官网库下载安装</p>
-<pre class=" language-bash"><code class="language-bash">$ yum <span class="token function">install</span> nodejs
-</code></pre>
-<p>node 安装好了，当然是我们的猪脚登场啦!全局安装我们的 hexo 脚手架</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
-</code></pre>
-<h3 id="nvm-node-版本管理"><a href="#nvm-node-版本管理" class="headerlink" title="nvm node 版本管理"></a>nvm node 版本管理</h3><p>这里强烈为大家推荐一个非常好用的 node 版本管理工具 nvm，它的最强之处在于 node 的版本管理，作为前端扫地僧，常常因为项目不同，node 的版本也需要跟着项目变动，这里如果使用 nvm 的话，一键切换，一键指定版本安装。talk is useless,快去亲自感受一下吧！这里我们可以使用以下两种方式安装：</p>
-<pre class=" language-bash"><code class="language-bash">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
-$ <span class="token function">wget</span> -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
-</code></pre>
-<p>查看 nvm 是否安装成功</p>
-<pre class=" language-bash"><code class="language-bash">$ nvm -v
-</code></pre>
-<p>这里附上 nvm 的常用命令：</p>
-<pre class=" language-bash"><code class="language-bash">$ nvm <span class="token function">install</span> 6.9.4
-$ nvm list
-$ nvm uninstall
-$ nvm ls-remote //列出远程服务器上所有可用的版本（非windows用户）
-$ nvm <span class="token function">ls</span> available //windows用户
-$ nvm <span class="token function">install</span> node--reinstall-packages-from<span class="token operator">=</span>node //安装最新版node
-</code></pre>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然环境已经完成，搓搓小手，开始我们的博客搭建旅程~<br>初始化我们的博客项目</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo init name //不要傻傻的填name哦，这里是你创建的博客项目的名字
-</code></pre>
-<p>初始化完成以后，我们 cd 进去。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> i
-</code></pre>
-<p>然后！这里开始我们 hexo 博客的第一个需要烂熟于心的命令！</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo g
-</code></pre>
-<p>这里全写就是 hexo generate，让 hexo 脚手架生成静态页面，你会在目录下新发现一个 public 文件夹，它就是你的第一个博客宝宝！</p>
-<p>号外号外：顺带提一嘴，npm install 可以直接写成 npm i，使用 yarn 的话，yarn install 可以写为 yarn ！<br><img src="/meme/detail.jpg" alt="Eric 真帅!"></p>
-<p>ok！现在我们的博客页面已经生成好了，当然是机动人心的 start 环节，当当当当~</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo s
-</code></pre>
-<p>哈哈，你以为 s 是 start？你错了，这里我们运行的是 hexo server。ps：我也是在看 hexo 官网才发现的<br><img src="/meme/nothin.jpg" alt="Eric 真帅!"></p>
-<h2 id="哦！恭喜你，你的第一个博客已经搭建好了"><a href="#哦！恭喜你，你的第一个博客已经搭建好了" class="headerlink" title="哦！恭喜你，你的第一个博客已经搭建好了"></a>哦！恭喜你，你的第一个博客已经搭建好了</h2><p>根据命令行提示，访问本机 IP:4000 即可，进去之后就是 hexo 的默认界面啦，里面会有一篇经典的 hello world。当然咯，默认的主题，色调都会比较简陋啦，想不想拥有像我一样的漂亮主题？想不想像我一样有一个漂亮的 2d 人物？这里我就不一一 教大家了，贴上链接，大家上手以后就多看看啦。<br><a target="_blank" rel="noopener" href="https://hexo.io/themes/" title="https://mdnice.com/">hexo 主题</a><br><a target="_blank" rel="noopener" href="https://www.markdown.xyz/basic-syntax/" title="https://www.markdown.xyz/basic-syntax/">Markdown 中文指南</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="https://hexo.io/zh-cn/docs/">hexo 中文文档</a></p>
+                <h1 id="什么是-Mobx"><a href="#什么是-Mobx" class="headerlink" title="什么是 Mobx"></a>什么是 Mobx</h1><p>MobX 通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。他的响应原则是：</p>
+<blockquote>
+<p>任何源自应用状态的东西都应该自动地获得。</p>
+</blockquote>
+<p><img src="/meme/login.png" alt="Eric 真帅!"></p>
+<p>React 结合 Mobx 开发的话，个人感觉相比于 Redux 来说，清爽了很多。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而 MobX 提供机制来存储和更新应用状态供 React 使用。对于应用开发中的常见问题，React 和 MobX 都提供了最优和独特的解决方案。React 提供了优化 UI 渲染的机制， 这种机制就是通过使用虚拟 DOM 来减少昂贵的 DOM 变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。</p>
+<h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><h2 id="Observable-state-可观察的状态"><a href="#Observable-state-可观察的状态" class="headerlink" title="Observable state(可观察的状态)"></a>Observable state(可观察的状态)</h2><p>MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。<br>通过使用 @observable 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"mobx"</span><span class="token punctuation">;</span>
 
+<span class="token keyword">class</span> <span class="token class-name">Todo</span> <span class="token punctuation">{</span>
+  id <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  @observable title <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  @observable finished <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>observable 的对象不仅可以是基本类型，还可以是引用值，比如对象或数组</p>
+<h2 id="Computed-values-计算值"><a href="#Computed-values-计算值" class="headerlink" title="Computed values(计算值)"></a>Computed values(计算值)</h2><p>使用 MobX， 你可以定义在相关数据发生变化时自动更新的值。<br>通过@computed 装饰器或者利用 (extend)Observable 时调用 的 getter / setter 函数来进行使用。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">TodoList</span> <span class="token punctuation">{</span>
+  @observable todos <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  @computed <span class="token keyword">get</span> <span class="token function">unfinishedTodoCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>finished<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>当添加了一个新的 todo 或者某个 todo 的 finished 属性发生变化时，MobX 会确保 unfinishedTodoCount 自动更新。</p>
+<h2 id="Reactions-自定义反应"><a href="#Reactions-自定义反应" class="headerlink" title="Reactions(自定义反应)"></a>Reactions(自定义反应)</h2><p>Reactions 和计算值很像，但它不是产生一个新的值，而是会产生一些副作用，比如打印到控制台、网络请求、递增地更新 React 组件树以修补 DOM、等等。 简而言之，reactions 在 响应式编程和命令式编程之间建立沟通的桥梁。</p>
+<blockquote>
+<p>自定义 reactions<br>使用 autorun、reaction 和 when 函数即可简单的创建自定义 reactions(autorun、reaction 和 when 可在<a target="_blank" rel="noopener" href="https://cn.mobx.js.org/refguide/computed-decorator.html" title="https://cn.mobx.js.org/refguide/computed-decorator.html">官方文档</a>查看)。</p>
+</blockquote>
+<pre class=" language-js"><code class="language-js"><span class="token function">autorun</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tasks left: "</span> <span class="token operator">+</span> todos<span class="token punctuation">.</span>unfinishedTodoCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h2><p>如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 observer 函数/ 装饰器. observer 由 mobx-react 包提供的。observer 会将 React (函数)组件转换为它们需要渲染的数据的衍生。<br>使用 MobX 时没有所谓的智能和无脑组件。 所有的组件都会以巧妙的方式进行渲染，而只需要一种简单无脑的方式来定义它们，MobX 会确保组件总是在需要的时重新渲染。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> observer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"mobx-react"</span><span class="token punctuation">;</span>
+
+@observer
+<span class="token keyword">class</span> <span class="token class-name">TodoListView</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+          <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>todoList<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>TodoView todo<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">}</span> key<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+          <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+        Tasks left<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>todoList<span class="token punctuation">.</span>unfinishedTodoCount<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> TodoView <span class="token operator">=</span> <span class="token function">observer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> todo <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>li<span class="token operator">></span>
+    <span class="token operator">&lt;</span>input
+      type<span class="token operator">=</span><span class="token string">"checkbox"</span>
+      checked<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>finished<span class="token punctuation">}</span>
+      onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>finished <span class="token operator">=</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>finished<span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token punctuation">{</span>todo<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TodoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>TodoListView todoList<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"mount"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="MobX-会对什么作出响应"><a href="#MobX-会对什么作出响应" class="headerlink" title="MobX 会对什么作出响应"></a>MobX 会对什么作出响应</h2><p>个人理解是对任何通过 Mobx 函数调用到应用数据（被 observer 的属性）的任何地方，都会做出响应</p>
+<blockquote>
+<p>MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性做出反应。</p>
+</blockquote>
+<ul>
+<li>“读取” 是对象属性的间接引用，可以用过 . (例如 user.name) 或者 [] (例如 user[‘name’]) 的形式完成。</li>
+<li>“追踪函数” 是 computed 表达式、observer 组件的 render() 方法和 when、reaction 和 autorun 的第一个入参函数。</li>
+<li>“过程(during)” 意味着只追踪那些在函数执行时被读取的 observable 。这些值是否由追踪函数直接或间接使用并不重要。</li>
+</ul>
+<p>换句话说，MobX 不会对其作出反应:</p>
+<ul>
+<li>从 observable 获取的值，但是在追踪函数之外</li>
+<li>在异步调用的代码块中读取的 observable</li>
+</ul>
+<h1 id="Mobx-的优势"><a href="#Mobx-的优势" class="headerlink" title="Mobx 的优势"></a>Mobx 的优势</h1><ul>
+<li>简单且可扩展<br>MobX 是状态管理库中侵入性最小的之一。这使得 MobX 的方法不但简单，而且可扩展性也非常好:</li>
+<li>使用类和真正的引用<br>使用 MobX 不需要使数据标准化。这使得库十分适合那些异常复杂的领域模型<br>PS：Mobx 以类的方式管理应用数据，方便快捷，易理解易操作，终极轻量香喷喷！</li>
+<li>保证参照完整性<br>因为数据不需要标准化，所以 MobX 会自动跟踪状态和衍生之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？<br>没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老 bug 已不复存在。作为一个程序员，你可能记不住修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。</li>
+<li>更简单的 actions 更便于维护<br>使用 MobX 修改状态是非常简单的。你只需简单的写出你的目的。MobX 会替你处理好剩下的事情。</li>
+<li>高效的细粒度的可观测性<br>MobX 会构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。<br>简单来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，而不是通过程序来控制。<br>MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷<br>详情可参考<a target="_blank" rel="noopener" href="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254" title="https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254">深入剖析 MobX</a></li>
+<li>易操作性<br>MobX 使用原生 javascript 。由于它的侵入性不强，它可以和绝大部分 javascript 库共同使用，而不需要特定的 MobX 风格库。<br>所以你可以继续使用你的路由，数据获取和工具库，比如 react-router、 director、 superagent、 lodash，等等。<br>出于同样的原因，你可以在服务器端和客户端使用它，也可以在 react-native 这样的同构应用中使用。<br>结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新概念。</li>
+</ul>
+<h1 id="使用-Mobx，工作时间减半，快乐加倍"><a href="#使用-Mobx，工作时间减半，快乐加倍" class="headerlink" title="使用 Mobx，工作时间减半，快乐加倍"></a>使用 Mobx，工作时间减半，快乐加倍</h1><h1 id="它真的超级简单、超级快！棒极了！千万不要错过！"><a href="#它真的超级简单、超级快！棒极了！千万不要错过！" class="headerlink" title="它真的超级简单、超级快！棒极了！千万不要错过！"></a>它真的超级简单、超级快！棒极了！千万不要错过！</h1>
                 
             </div>
             <hr/>
@@ -539,7 +596,7 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/">https://www.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/</a>
+                    <a href="https://www.yfcloud.site/2021/04/27/mobx-geng-qing-shuang-de-zhuang-tai-guan-li/">https://www.yfcloud.site/2021/04/27/mobx-geng-qing-shuang-de-zhuang-tai-guan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,12 +634,16 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                                    <span class="chip bg-color">博客 hexo</span>
+                                <a href="/tags/Import/">
+                                    <span class="chip bg-color">Import</span>
                                 </a>
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/Mobx/">
+                                    <span class="chip bg-color">Mobx</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/">
+                                    <span class="chip bg-color">状态机</span>
                                 </a>
                             
                         </div>
@@ -1020,79 +1081,28 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/13/kuai-le-kai-fa-de-bi-bei-xiao-zhi-shi-dian/">
+                <a href="/2021/04/27/mobx-geng-qing-shuang-de-zhuang-tai-guan-li/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="快乐开发的必备小知识点">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Mobx—工作时间减半，快乐加倍！">
                         
-                        <span class="card-title">快乐开发的必备小知识点</span>
+                        <span class="card-title">Mobx—工作时间减半，快乐加倍！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人总结的开发小技巧，快乐开发的必备之选
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Eric
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">高效开发</span>
-                    </a>
-                    
-                    <a href="/tags/item%EF%BC%88zsh%EF%BC%89/">
-                        <span class="chip bg-color">item（zsh）</span>
-                    </a>
-                    
-                    <a href="/tags/vpn/">
-                        <span class="chip bg-color">vpn</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo博客建站（小白建站旅程）">
-                        
-                        <span class="card-title">hexo博客建站（小白建站旅程）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一篇为小白同伴记录博客建站过程
+                            状态管理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-27
                             </span>
                         <span class="publish-author">
                             
@@ -1106,12 +1116,68 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                        <span class="chip bg-color">博客 hexo</span>
+                    <a href="/tags/Import/">
+                        <span class="chip bg-color">Import</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Mobx/">
+                        <span class="chip bg-color">Mobx</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/">
+                        <span class="chip bg-color">状态机</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/26/require-import/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="require &amp;&amp; import">
+                        
+                        <span class="card-title">require &amp;&amp; import</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Module
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Eric
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ECMASCript/">
+                        <span class="chip bg-color">ECMASCript</span>
+                    </a>
+                    
+                    <a href="/tags/CommonJS/">
+                        <span class="chip bg-color">CommonJS</span>
+                    </a>
+                    
+                    <a href="/tags/Import/">
+                        <span class="chip bg-color">Import</span>
                     </a>
                     
                 </div>

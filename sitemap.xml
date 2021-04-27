@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.yfcloud.site/tags/index.html</loc>
+    <loc>https://www.yfcloud.site/2021/04/26/require-import/</loc>
     
     <lastmod>2021-04-26</lastmod>
     
@@ -10,6 +10,13 @@
   
   <url>
     <loc>https://www.yfcloud.site/friends/index.html</loc>
+    
+    <lastmod>2021-04-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/index.html</loc>
     
     <lastmod>2021-04-26</lastmod>
     
@@ -88,7 +95,7 @@
 
   <url>
     <loc>https://www.yfcloud.site/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,91 +103,112 @@
   
   <url>
     <loc>https://www.yfcloud.site/tags/JS%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/Sentry/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E5%8D%9A%E5%AE%A2-hexo/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/github/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/ECMASCript/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/CommonJS/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/Import/</loc>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95SSO/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/CAS/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/item%EF%BC%88zsh%EF%BC%89/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/vpn/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/webpack/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/webpack%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E5%B7%A8TM%E8%AF%A6%E7%BB%86/</loc>
-    <lastmod>2021-04-26</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

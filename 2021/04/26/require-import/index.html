@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo博客建站（小白建站旅程）, 前端 Eric 多睡觉 少吃饭">
+    <meta name="keywords" content="require &amp;&amp; import, 前端 Eric 多睡觉 少吃饭">
     <meta name="description" content="少睡觉 多吃饭 前端 coding">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo博客建站（小白建站旅程） | Eric is here</title>
+    <title>require &amp;&amp; import | Eric is here</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo博客建站（小白建站旅程）</h1>
+                    <h1 class="description center-align post-title">require &amp;&amp; import</h1>
                 </div>
             </div>
         </div>
@@ -412,12 +412,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                                <span class="chip bg-color">博客 hexo</span>
+                            <a href="/tags/ECMASCript/">
+                                <span class="chip bg-color">ECMASCript</span>
                             </a>
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/CommonJS/">
+                                <span class="chip bg-color">CommonJS</span>
+                            </a>
+                        
+                            <a href="/tags/Import/">
+                                <span class="chip bg-color">Import</span>
                             </a>
                         
                     </div>
@@ -432,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-04-26
                 </div>
                 
 
@@ -446,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    714
+                    423
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -473,46 +477,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><p>因为 hexo 是基于 node 环境，所以这里我们先安装 node.我本人是使用腾讯云的 centos 搭建，所以这里选择使用 yum.这里我们先安装 EPEL 库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> yum <span class="token function">install</span> epel-release
+                <h1 id="CommonJS-modules"><a href="#CommonJS-modules" class="headerlink" title="CommonJS modules"></a>CommonJS modules</h1><p>Module 既可以是客户端，也可以是服务器端，安全的或不安全的，可以是现在实现的，也可以是将来使用语法扩展的系统支持的</p>
+<h2 id="Module-上下文"><a href="#Module-上下文" class="headerlink" title="Module 上下文"></a>Module 上下文</h2><ul>
+<li>在一个模块中，有一个自由变量“require”，它是一个函数。<ul>
+<li>require 函数接受一个模块标识符</li>
+<li>require 返回外部 module 导出的 API</li>
+<li>如果存在一个依赖循环，当外部 module 的一个传递依赖项需要它时，它可能还没有完成执行;在这种情况下，如果想要 module 执行，”require”返回的对象必须至少包含外部模块在调用 require(导致当前 module 执行)之前所需的导出。</li>
+<li>如果一个 module 不能被导出，requie 必定报错</li>
+</ul>
+</li>
+<li>在一个 module 中，有一个自由变量称之为 export，这是一个对象，module 在执行时可以向其添加 API</li>
+<li>module 必须使用 exports 对象作为导出的唯一方法</li>
+</ul>
+<h2 id="module-标识符"><a href="#module-标识符" class="headerlink" title="module 标识符"></a>module 标识符</h2><ul>
+<li>标识符是由正斜杠分隔的一串术语<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> Square <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./square.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>再从官网库下载安装</p>
-<pre class=" language-bash"><code class="language-bash">$ yum <span class="token function">install</span> nodejs
+</li>
+<li>A term must be a camelCase identifier, “.”, or “..”.</li>
+<li>module 标识符可能没有像”.js”这样的文件扩展名。</li>
+<li>模块标识符可以是“相对的”或“顶级的”。如果第一项是’.’或“..”，则模块标识符是“相对的”</li>
+<li>顶级标识符从概念模块的命名空间根解析</li>
+<li>相对标识符相对于编写和调用“require”的模块的标识符进行解析。</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// math.js</span>
+exports<span class="token punctuation">.</span>add <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    args <span class="token operator">=</span> arguments<span class="token punctuation">,</span>
+    l <span class="token operator">=</span> args<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> l<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    sum <span class="token operator">+</span><span class="token operator">=</span> args<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// increment.js</span>
+<span class="token keyword">var</span> add <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"math"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>add<span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span>increment <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">add</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// program.js</span>
+<span class="token keyword">var</span> inc <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"increment"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>increment<span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">inc</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
 </code></pre>
-<p>node 安装好了，当然是我们的猪脚登场啦!全局安装我们的 hexo 脚手架</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
-</code></pre>
-<h3 id="nvm-node-版本管理"><a href="#nvm-node-版本管理" class="headerlink" title="nvm node 版本管理"></a>nvm node 版本管理</h3><p>这里强烈为大家推荐一个非常好用的 node 版本管理工具 nvm，它的最强之处在于 node 的版本管理，作为前端扫地僧，常常因为项目不同，node 的版本也需要跟着项目变动，这里如果使用 nvm 的话，一键切换，一键指定版本安装。talk is useless,快去亲自感受一下吧！这里我们可以使用以下两种方式安装：</p>
-<pre class=" language-bash"><code class="language-bash">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
-$ <span class="token function">wget</span> -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
-</code></pre>
-<p>查看 nvm 是否安装成功</p>
-<pre class=" language-bash"><code class="language-bash">$ nvm -v
-</code></pre>
-<p>这里附上 nvm 的常用命令：</p>
-<pre class=" language-bash"><code class="language-bash">$ nvm <span class="token function">install</span> 6.9.4
-$ nvm list
-$ nvm uninstall
-$ nvm ls-remote //列出远程服务器上所有可用的版本（非windows用户）
-$ nvm <span class="token function">ls</span> available //windows用户
-$ nvm <span class="token function">install</span> node--reinstall-packages-from<span class="token operator">=</span>node //安装最新版node
-</code></pre>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然环境已经完成，搓搓小手，开始我们的博客搭建旅程~<br>初始化我们的博客项目</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo init name //不要傻傻的填name哦，这里是你创建的博客项目的名字
-</code></pre>
-<p>初始化完成以后，我们 cd 进去。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> i
-</code></pre>
-<p>然后！这里开始我们 hexo 博客的第一个需要烂熟于心的命令！</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo g
-</code></pre>
-<p>这里全写就是 hexo generate，让 hexo 脚手架生成静态页面，你会在目录下新发现一个 public 文件夹，它就是你的第一个博客宝宝！</p>
-<p>号外号外：顺带提一嘴，npm install 可以直接写成 npm i，使用 yarn 的话，yarn install 可以写为 yarn ！<br><img src="/meme/detail.jpg" alt="Eric 真帅!"></p>
-<p>ok！现在我们的博客页面已经生成好了，当然是机动人心的 start 环节，当当当当~</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo s
-</code></pre>
-<p>哈哈，你以为 s 是 start？你错了，这里我们运行的是 hexo server。ps：我也是在看 hexo 官网才发现的<br><img src="/meme/nothin.jpg" alt="Eric 真帅!"></p>
-<h2 id="哦！恭喜你，你的第一个博客已经搭建好了"><a href="#哦！恭喜你，你的第一个博客已经搭建好了" class="headerlink" title="哦！恭喜你，你的第一个博客已经搭建好了"></a>哦！恭喜你，你的第一个博客已经搭建好了</h2><p>根据命令行提示，访问本机 IP:4000 即可，进去之后就是 hexo 的默认界面啦，里面会有一篇经典的 hello world。当然咯，默认的主题，色调都会比较简陋啦，想不想拥有像我一样的漂亮主题？想不想像我一样有一个漂亮的 2d 人物？这里我就不一一 教大家了，贴上链接，大家上手以后就多看看啦。<br><a target="_blank" rel="noopener" href="https://hexo.io/themes/" title="https://mdnice.com/">hexo 主题</a><br><a target="_blank" rel="noopener" href="https://www.markdown.xyz/basic-syntax/" title="https://www.markdown.xyz/basic-syntax/">Markdown 中文指南</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="https://hexo.io/zh-cn/docs/">hexo 中文文档</a></p>
 
                 
             </div>
@@ -539,7 +548,7 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/">https://www.yfcloud.site/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/</a>
+                    <a href="https://www.yfcloud.site/2021/04/26/require-import/">https://www.yfcloud.site/2021/04/26/require-import/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,12 +586,16 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                                    <span class="chip bg-color">博客 hexo</span>
+                                <a href="/tags/ECMASCript/">
+                                    <span class="chip bg-color">ECMASCript</span>
                                 </a>
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/CommonJS/">
+                                    <span class="chip bg-color">CommonJS</span>
+                                </a>
+                            
+                                <a href="/tags/Import/">
+                                    <span class="chip bg-color">Import</span>
                                 </a>
                             
                         </div>
@@ -1020,79 +1033,28 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/13/kuai-le-kai-fa-de-bi-bei-xiao-zhi-shi-dian/">
+                <a href="/2021/04/26/require-import/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="快乐开发的必备小知识点">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="require &amp;&amp; import">
                         
-                        <span class="card-title">快乐开发的必备小知识点</span>
+                        <span class="card-title">require &amp;&amp; import</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人总结的开发小技巧，快乐开发的必备之选
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Eric
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">高效开发</span>
-                    </a>
-                    
-                    <a href="/tags/item%EF%BC%88zsh%EF%BC%89/">
-                        <span class="chip bg-color">item（zsh）</span>
-                    </a>
-                    
-                    <a href="/tags/vpn/">
-                        <span class="chip bg-color">vpn</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/09/hexo-bo-ke-jian-zhan-xiao-bai-jian-zhan-lu-cheng/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo博客建站（小白建站旅程）">
-                        
-                        <span class="card-title">hexo博客建站（小白建站旅程）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一篇为小白同伴记录博客建站过程
+                            Module
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
                             </span>
                         <span class="publish-author">
                             
@@ -1106,12 +1068,68 @@ $ nvm <span class="token function">install</span> node--reinstall-packages-from<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2-hexo/">
-                        <span class="chip bg-color">博客 hexo</span>
+                    <a href="/tags/ECMASCript/">
+                        <span class="chip bg-color">ECMASCript</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/CommonJS/">
+                        <span class="chip bg-color">CommonJS</span>
+                    </a>
+                    
+                    <a href="/tags/Import/">
+                        <span class="chip bg-color">Import</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/25/webpack-ru-men-yi/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="巨TM详细的Webpack入门(一)">
+                        
+                        <span class="card-title">巨TM详细的Webpack入门(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            webpack
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Eric
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/webpack/">
+                        <span class="chip bg-color">webpack</span>
+                    </a>
+                    
+                    <a href="/tags/webpack%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">webpack基础</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A8TM%E8%AF%A6%E7%BB%86/">
+                        <span class="chip bg-color">巨TM详细</span>
                     </a>
                     
                 </div>

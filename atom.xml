@@ -6,7 +6,7 @@
   <link href="https://www.yfcloud.site/atom.xml" rel="self"/>
   
   <link href="https://www.yfcloud.site/"/>
-  <updated>2021-04-26T02:18:23.847Z</updated>
+  <updated>2021-04-26T05:40:55.233Z</updated>
   <id>https://www.yfcloud.site/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>require &amp;&amp; import</title>
+    <link href="https://www.yfcloud.site/2021/04/26/require-import/"/>
+    <id>https://www.yfcloud.site/2021/04/26/require-import/</id>
+    <published>2021-04-26T03:30:00.000Z</published>
+    <updated>2021-04-26T05:40:55.233Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CommonJS-modules&quot;&gt;&lt;a href=&quot;#CommonJS-modules&quot; class=&quot;headerlink&quot; title=&quot;CommonJS modules&quot;&gt;&lt;/a&gt;CommonJS modules&lt;/h1&gt;&lt;p&gt;Module</summary>
+        
+      
+    
+    
+    
+    
+    <category term="ECMASCript" scheme="https://www.yfcloud.site/tags/ECMASCript/"/>
+    
+    <category term="CommonJS" scheme="https://www.yfcloud.site/tags/CommonJS/"/>
+    
+    <category term="Import" scheme="https://www.yfcloud.site/tags/Import/"/>
+    
+  </entry>
   
   <entry>
     <title>巨TM详细的Webpack入门(一)</title>

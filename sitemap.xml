@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.yfcloud.site/2021/04/27/mobx-zui-jia-shi-jian-by-eric/</loc>
+    <loc>https://www.yfcloud.site/2021/04/28/mobx-zui-jia-shi-jian-by-eric/</loc>
     
     <lastmod>2021-04-28</lastmod>
     
@@ -116,13 +116,6 @@
 
   
   <url>
-    <loc>https://www.yfcloud.site/tags/JS%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-04-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.yfcloud.site/tags/Mobx/</loc>
     <lastmod>2021-04-28</lastmod>
     <changefreq>daily</changefreq>
@@ -137,7 +130,14 @@
   </url>
   
   <url>
-    <loc>https://www.yfcloud.site/tags/Import/</loc>
+    <loc>https://www.yfcloud.site/tags/%E5%BF%AB%E4%B9%90%E6%98%9F%E7%90%83/</loc>
+    <lastmod>2021-04-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/JS%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -180,6 +180,13 @@
   
   <url>
     <loc>https://www.yfcloud.site/tags/CommonJS/</loc>
+    <lastmod>2021-04-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfcloud.site/tags/Import/</loc>
     <lastmod>2021-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -236,13 +243,6 @@
   
   <url>
     <loc>https://www.yfcloud.site/tags/%E5%B7%A8TM%E8%AF%A6%E7%BB%86/</loc>
-    <lastmod>2021-04-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yfcloud.site/tags/%E5%BF%AB%E4%B9%90%E6%98%9F%E7%90%83/</loc>
     <lastmod>2021-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -89,6 +89,19 @@ module.exports = {
 
   - 使用 CommonsChunkPlugin 为每个页面间的应用程序共享代码创建 bundle。由于入口起点增多，多页应用能够复用入口起点之间的大量代码/模块，从而可以极大地从这些技术中受益。
 
+## context
+
+webpack 在寻找相对路径的文件时会以 context 为根目录，context 默认为执行启动 webpack 时所在的当前工作目录。如果想改变 context 的默认配置，则可以在配置文件中这样设置：
+
+```js
+module.exports = {
+  context: path.resolve(__dirname, "app"),
+};
+```
+
+注意：context 必须是一个绝对路径的字符串，除此之外，还可以通过在启动 webpack 时带上参数 webpack --context 来设置 context。
+entry 的路径和其他依赖的模块的路径可能采用相对于 context 的路径来描述，context 会影响到这些相对路径所指向的真实文件。
+
 # 出口[output]
 
 output 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，默认值为 ./dist。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。你可以通过在配置中指定一个 output 字段，来配置这些处理过程

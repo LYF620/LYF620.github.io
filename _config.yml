@@ -10,7 +10,8 @@ keywords: "前端 Eric 多睡觉 少吃饭"
 author: Eric
 language: zh-CN
 timezone: ""
-
+encrypt:
+  enable: true
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://www.yfcloud.site

@@ -1,11 +1,11 @@
 ---
 title: Mobx最佳实践-By Eric
-date: 2021-04-27 10:00
+date: 2021-04-28 10:00
 top: false
 cover: true
 toc: true
-mathjax: true
-password:
+password: Eric_Liu
+message: 输入密码，查看文章
 summary: 状态管理
 tags:
   - Mobx
@@ -15,7 +15,7 @@ img: "/medias/featureimages/8.jpg"
 sitemap: true
 ---
 
-# 代码最佳实践（个人）
+## 代码最佳实践（个人）
 
 > PS:以下内容均以 react 作为实践
 
@@ -246,8 +246,8 @@ function Measurement({ unit }) {
 
 这里的使用场景为：
 
-- mobx 类用来管理前端所需数据响应
-- useLocalStore 用来作为该 pages 页面的管理（一个父组件，多个子组件）
+- mobx 类用来管理前端请求所需数据响应
+- useLocalStore 用来作为该 TestPage 的全局状态机（一个父组件，多个子组件）
 
 文件目录：
 
@@ -288,4 +288,73 @@ export function createStore<T extends (...args: any) => any>(
     },
   }
 }
+```
+
+在 TestPage/store/index.ts 文件中使用 useLocalStore 提供全局状态管理
+
+```js
+import { createStore } from "@/utils/store";
+import { useLocalStore } from "mobx-react-lite";
+
+export function useModel() {
+  const store = useLocalStore(() => ({
+    //创建model实例，用来管理前端请求所需数据响应
+    model: new Model(),
+    loading: false,
+    setLoading(val) {
+      this.loading = val;
+    },
+  }));
+
+  return store;
+}
+
+const store = createStore(useModel);
+
+export const Provider = store.Provider;
+export const Context = store.Context;
+export const useStore = store.useStore;
+```
+
+此时的 store 已经声明好了，其包含 Provider、Context、useStore，此时最后一步，我们在 TestPage 的首页 index.ts 使用 context 的属性，为 TestPage 提供全局数据
+
+```js
+import React from "react";
+import styled from "styled-components";
+import { observer } from "mobx-react-lite";
+import { Context, useModel, useStore } from "./store";
+
+const StyledLayout = styled.div``;
+
+export const Component = observer(function Component() {
+  return <StyledLayout></StyledLayout>;
+});
+
+export default function Mobx() {
+  const model = useModel();
+
+  return (
+    <Context.Provider value={model}>
+      <Component />
+    </Context.Provider>
+  );
+}
+```
+
+做完这些，我们的 TestPage 就拥有了一个管理整个组件的状态机，在子页面中使用时，如下：
+
+```js
+import React from "react";
+import styled from "styled-components";
+import { observer } from "mobx-react-lite";
+import { Context, useModel, useStore } from "./store";
+
+const StyledLayout = styled.div``;
+
+export const Component = observer(function Component() {
+  //useStore即使用useContext，返回context的当前值
+  const store = useStore();
+  //声明的store就包含useLoaclStore的所有属性和方法了，在页面中直接使用其数据渲染即可，并且数据会基于mobx进行状态更新
+  return <StyledLayout></StyledLayout>;
+});
 ```

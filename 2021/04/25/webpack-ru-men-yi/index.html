@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.4k
+                    7.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    29 分
                 </div>
                 
 
@@ -526,6 +526,12 @@
 </ul>
 </li>
 </ul>
+<h2 id="context"><a href="#context" class="headerlink" title="context"></a>context</h2><p>webpack 在寻找相对路径的文件时会以 context 为根目录，context 默认为执行启动 webpack 时所在的当前工作目录。如果想改变 context 的默认配置，则可以在配置文件中这样设置：</p>
+<pre class=" language-js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>注意：context 必须是一个绝对路径的字符串，除此之外，还可以通过在启动 webpack 时带上参数 webpack –context 来设置 context。<br>entry 的路径和其他依赖的模块的路径可能采用相对于 context 的路径来描述，context 会影响到这些相对路径所指向的真实文件。</p>
 <h1 id="出口-output"><a href="#出口-output" class="headerlink" title="出口[output]"></a>出口[output]</h1><p>output 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，默认值为 ./dist。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。你可以通过在配置中指定一个 output 字段，来配置这些处理过程<br>output 位于对象最顶级键(key)，包括了一组选项，指示 webpack 如何去输出、以及在哪里输出你的「bundle、asset 和其他你所打包或使用 webpack 载入的任何内容」。</p>
 <h2 id="单个入口语法-1"><a href="#单个入口语法-1" class="headerlink" title="单个入口语法"></a>单个入口语法</h2><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1900,7 +1906,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17k</span>&nbsp;字
+                class="white-color">17.1k</span>&nbsp;字
             
             
             

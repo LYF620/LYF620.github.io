@@ -4,12 +4,12 @@ date: 2021-03-16 19:17:12
 mathjax: true
 cover: true
 password:
-summary: "单点登录SSO"
+summary: '单点登录SSO'
 tags:
   - 单点登录SSO
   - CAS
-categories:
-img: "/meme/sso.png"
+categories: 单点登录SSO
+img: '/meme/sso.png'
 sitemap: true
 ---
 

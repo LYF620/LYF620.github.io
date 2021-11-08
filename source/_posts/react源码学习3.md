@@ -10,7 +10,7 @@ summary: 'react源码学习'
 tags:
   - react
   - react源码
-categories:
+categories: react源码学习
 img: '/medias/featureimages/12.jpg'
 sitemap: true
 ---

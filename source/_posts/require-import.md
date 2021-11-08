@@ -11,8 +11,8 @@ tags:
   - ECMASCript
   - CommonJS
   - Import
-categories:
-img: "/medias/featureimages/6.jpg"
+categories: JavaScript
+img: '/medias/featureimages/6.jpg'
 sitemap: true
 ---
 
@@ -34,7 +34,7 @@ Module 既可以是客户端，也可以是服务器端，安全的或不安全�
 
 - 标识符是由正斜杠分隔的一串术语
   ```js
-  const Square = require("./square.js");
+  const Square = require('./square.js')
   ```
 - A term must be a camelCase identifier, ".", or "..".
 - module 标识符可能没有像".js"这样的文件扩展名。
@@ -48,23 +48,23 @@ exports.add = function () {
   var sum = 0,
     i = 0,
     args = arguments,
-    l = args.length;
+    l = args.length
   while (i < l) {
-    sum += args[i++];
+    sum += args[i++]
   }
-  return sum;
-};
+  return sum
+}
 
 // increment.js
-var add = require("math").add;
+var add = require('math').add
 exports.increment = function (val) {
-  return add(val, 1);
-};
+  return add(val, 1)
+}
 
 // program.js
-var inc = require("increment").increment;
-var a = 1;
-inc(a); // 2
+var inc = require('increment').increment
+var a = 1
+inc(a) // 2
 ```
 
 ## ES2015 import
@@ -95,19 +95,19 @@ import '/modules/my-module.js';
 此外，还有一个类似函数的动态 import()，它不需要依赖 type="module" 的 script 标签。
 
 ```js
-var promise = import("module-name"); //这是一个处于第三阶段的提案。
+var promise = import('module-name') //这是一个处于第三阶段的提案。
 ```
 
 将 myModule 插入当前作用域，其中包含来自位于/modules/my-module.js 文件中导出的所有接口
 
 ```js
-import * as myModule from "/modules/my-module.js";
+import * as myModule from '/modules/my-module.js'
 ```
 
 访问导出接口意味着使用模块名称（在本例为“myModule”）作为命名空间。例如，如果上面导入的模块包含一个接口 doAllTheAmazingThings()，你可以这样调用：
 
 ```js
-myModule.doAllTheAmazingThings();
+myModule.doAllTheAmazingThings()
 ```
 
 ### 动态 import
@@ -124,11 +124,11 @@ myModule.doAllTheAmazingThings();
 关键字 import 可以像调用函数一样来动态的导入模块。以这种方式调用，将返回一个 promise
 
 ```js
-import("/modules/my-module.js").then((module) => {
+import('/modules/my-module.js').then((module) => {
   // Do something with the module.
-});
+})
 // 这种使用方式也支持 await 关键字
-let module = await import("/modules/my-module.js");
+let module = await import('/modules/my-module.js')
 ```
 
 标准导入方案：
@@ -137,43 +137,43 @@ let module = await import("/modules/my-module.js");
 ```js
 // file.js
 function getJSON(url, callback) {
-  let xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest()
   xhr.onload = function () {
-    callback(this.responseText);
-  };
-  xhr.open("GET", url, true);
-  xhr.send();
+    callback(this.responseText)
+  }
+  xhr.open('GET', url, true)
+  xhr.send()
 }
 
 export function getUsefulContents(url, callback) {
-  getJSON(url, (data) => callback(JSON.parse(data)));
+  getJSON(url, (data) => callback(JSON.parse(data)))
 }
 
 // main.js
-import { getUsefulContents } from "/modules/file.js";
+import { getUsefulContents } from '/modules/file.js'
 
-getUsefulContents("http://www.example.com", (data) => {
-  doSomethingUseful(data);
-});
+getUsefulContents('http://www.example.com', (data) => {
+  doSomethingUseful(data)
+})
 ```
 
 动态导入方案：
 此示例展示了如何基于用户操作去加载功能模块到页面上，在例子中通过点击按钮，然后会调用模块内的函数。
 
 ```js
-const main = document.querySelector("main");
-for (const link of document.querySelectorAll("nav > a")) {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
+const main = document.querySelector('main')
+for (const link of document.querySelectorAll('nav > a')) {
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
 
-    import("/modules/my-module.js")
+    import('/modules/my-module.js')
       .then((module) => {
-        module.loadPageInto(main);
+        module.loadPageInto(main)
       })
       .catch((err) => {
-        main.textContent = err.message;
-      });
-  });
+        main.textContent = err.message
+      })
+  })
 }
 ```
 
@@ -195,9 +195,9 @@ for (const link of document.querySelectorAll("nav > a")) {
 示例
 
 ```css
-@import url("fineprint.css") print;
-@import "custom.css";
-@import url("chrome://communicator/skin/");
-@import "common.css" screen;
-@import url("landscape.css") screen and (orientation: landscape);
+@import url('fineprint.css') print;
+@import 'custom.css';
+@import url('chrome://communicator/skin/');
+@import 'common.css' screen;
+@import url('landscape.css') screen and (orientation: landscape);
 ```

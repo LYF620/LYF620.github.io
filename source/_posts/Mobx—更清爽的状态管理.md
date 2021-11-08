@@ -11,8 +11,8 @@ tags:
   - Mobx
   - 状态机
   - 快乐星球
-categories:
-img: "/medias/featureimages/7.jpg"
+categories: Mobx
+img: '/medias/featureimages/7.jpg'
 sitemap: true
 ---
 
@@ -34,12 +34,12 @@ MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察�
 通过使用 @observable 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
 
 ```js
-import { observable } from "mobx";
+import { observable } from 'mobx'
 
 class Todo {
-  id = Math.random();
-  @observable title = "";
-  @observable finished = false;
+  id = Math.random()
+  @observable title = ''
+  @observable finished = false
 }
 ```
 
@@ -52,9 +52,9 @@ observable 的对象不仅可以是基本类型，还可以是引用值，比如
 
 ```js
 class TodoList {
-  @observable todos = [];
+  @observable todos = []
   @computed get unfinishedTodoCount() {
-    return this.todos.filter((todo) => !todo.finished).length;
+    return this.todos.filter((todo) => !todo.finished).length
   }
 }
 ```
@@ -66,12 +66,12 @@ class TodoList {
 Reactions 和计算值很像，但它不是产生一个新的值，而是会产生一些副作用，比如打印到控制台、网络请求、递增地更新 React 组件树以修补 DOM、等等。 简而言之，reactions 在 响应式编程和命令式编程之间建立沟通的桥梁。
 
 > 自定义 reactions
-> 使用 autorun、reaction 和 when 函数即可简单的创建自定义 reactions(autorun、reaction 和 when 可在[官方文档](https://cn.mobx.js.org/refguide/computed-decorator.html "https://cn.mobx.js.org/refguide/computed-decorator.html")查看)。
+> 使用 autorun、reaction 和 when 函数即可简单的创建自定义 reactions(autorun、reaction 和 when 可在[官方文档](https://cn.mobx.js.org/refguide/computed-decorator.html 'https://cn.mobx.js.org/refguide/computed-decorator.html')查看)。
 
 ```js
 autorun(() => {
-  console.log("Tasks left: " + todos.unfinishedTodoCount);
-});
+  console.log('Tasks left: ' + todos.unfinishedTodoCount)
+})
 ```
 
 ## React 组件
@@ -80,9 +80,9 @@ autorun(() => {
 使用 MobX 时没有所谓的智能和无脑组件。 所有的组件都会以巧妙的方式进行渲染，而只需要一种简单无脑的方式来定义它们，MobX 会确保组件总是在需要的时重新渲染。
 
 ```js
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { observer } from "mobx-react";
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import { observer } from 'mobx-react'
 
 @observer
 class TodoListView extends Component {
@@ -96,7 +96,7 @@ class TodoListView extends Component {
         </ul>
         Tasks left: {this.props.todoList.unfinishedTodoCount}
       </div>
-    );
+    )
   }
 }
 
@@ -109,13 +109,13 @@ const TodoView = observer(({ todo }) => (
     />
     {todo.title}
   </li>
-));
+))
 
-const store = new TodoList();
+const store = new TodoList()
 ReactDOM.render(
   <TodoListView todoList={store} />,
-  document.getElementById("mount")
-);
+  document.getElementById('mount')
+)
 ```
 
 ## MobX 会对什么作出响应
@@ -158,7 +158,7 @@ PS：Mobx 以类的方式管理应用数据，方便快捷，易理解易操作�
 MobX 会构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。
 简单来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，而不是通过程序来控制。
 MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷
-详情可参考[深入剖析 MobX](https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254 "https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254")
+详情可参考[深入剖析 MobX](https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254 'https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254')
 
 ## 易操作性
 

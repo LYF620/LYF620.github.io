@@ -3,13 +3,13 @@ title: Sentry——开源监控系统部署(一)
 date: 2021-03-15 19:17:12
 mathjax: true
 password:
-summary: "错误日志平台"
+summary: '错误日志平台'
 cover: true
 tags:
   - 错误日志平台
   - Sentry
-categories:
-img: "/medias/featureimages/4.jpg"
+categories: Sentry
+img: '/medias/featureimages/4.jpg'
 sitemap: true
 ---
 
@@ -102,7 +102,7 @@ mail.use-tls: true  #是否使用tls服务
 mail.from: "邮件来源地址"
 ```
 
-该配置文件下还支持配置 git 以及 slack，详情可见[Sentry 官方文档](https://docs.sentry.io/ "https://docs.sentry.io/")
+该配置文件下还支持配置 git 以及 slack，详情可见[Sentry 官方文档](https://docs.sentry.io/ 'https://docs.sentry.io/')
 
 ## .env 文件
 

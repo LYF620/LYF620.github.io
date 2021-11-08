@@ -6,13 +6,13 @@ cover: true
 toc: true
 mathjax: true
 password:
-summary: "webpack"
+summary: 'webpack'
 tags:
   - webpack
   - webpack基础
   - 巨TM详细
-categories:
-img: "/medias/featureimages/5.jpg"
+categories: webpack
+img: '/medias/featureimages/5.jpg'
 sitemap: true
 ---
 
@@ -30,8 +30,8 @@ webpack 是一个现代 JavaScript 应用程序的静态模块打包器（module
 
 ```js
 module.exports = {
-  entry: "./path/to/my/entry/file.js",
-};
+  entry: './path/to/my/entry/file.js'
+}
 ```
 
 > 当你向 entry 传入一个数组时会发生什么？向 entry 属性传入「文件路径(file path)数组」将创建“多个主入口(multi-main entry)”。在你想要多个依赖文件一起注入，并且将它们的依赖导向(graph)到一个“chunk”时，传入数组的方式就很有用。
@@ -43,10 +43,10 @@ module.exports = {
 ```js
 module.exports = {
   entry: {
-    app: "./src/app.js",
-    vendors: "./src/vendors.js",
-  },
-};
+    app: './src/app.js',
+    vendors: './src/vendors.js'
+  }
+}
 ```
 
 对象语法会比较繁琐。然而，这是应用程序中定义入口的最可扩展的方式。
@@ -62,10 +62,10 @@ module.exports = {
   ```js
   module.exports = {
     entry: {
-      app: "./src/app.js",
-      vendors: "./src/vendors.js",
-    },
-  };
+      app: './src/app.js',
+      vendors: './src/vendors.js'
+    }
+  }
   ```
 
   webpack 从 app.js 和 vendors.js 开始创建依赖图(dependency graph)。这些依赖图是彼此完全分离、互相独立的（每个 bundle 中都有一个 webpack 引导(bootstrap)）。这种方式比较常见于，只有一个入口起点（不包括 vendor）的单页应用程序(single page application)中。
@@ -77,11 +77,11 @@ module.exports = {
   ```js
   module.exports = {
     entry: {
-      pageOne: "./src/pageOne/index.js",
-      pageTwo: "./src/pageTwo/index.js",
-      pageThree: "./src/pageThree/index.js",
-    },
-  };
+      pageOne: './src/pageOne/index.js',
+      pageTwo: './src/pageTwo/index.js',
+      pageThree: './src/pageThree/index.js'
+    }
+  }
   ```
 
   这里我们告诉 webpack 需要 3 个独立分离的依赖图（如上面的示例）。
@@ -95,8 +95,8 @@ webpack 在寻找相对路径的文件时会以 context 为根目录，context �
 
 ```js
 module.exports = {
-  context: path.resolve(__dirname, "app"),
-};
+  context: path.resolve(__dirname, 'app')
+}
 ```
 
 注意：context 必须是一个绝对路径的字符串，除此之外，还可以通过在启动 webpack 时带上参数 webpack --context 来设置 context。
@@ -110,17 +110,17 @@ output 位于对象最顶级键(key)，包括了一组选项，指示 webpack �
 ## 单个入口语法
 
 ```js
-const path = require("path");
+const path = require('path')
 
 module.exports = {
-  entry: "./path/to/my/entry/file.js",
+  entry: './path/to/my/entry/file.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'dist'),
     //path: bundle 生成(emit)到哪里
-    filename: "my-first-webpack.bundle.js",
+    filename: 'my-first-webpack.bundle.js'
     //filename: webpack bundle 的名称
-  },
-};
+  }
+}
 ```
 
 ## 多个入口语法
@@ -168,18 +168,18 @@ module.exports = {
 
 ```js
 module.exports = {
-  entry: "./path/to/my/entry/file.js",
+  entry: './path/to/my/entry/file.js',
   output: {
-    path: "/home/proj/cdn/assets/[hash]",
-    publicPath: "http://cdn.example.com/assets/[hash]/",
-  },
-};
+    path: '/home/proj/cdn/assets/[hash]',
+    publicPath: 'http://cdn.example.com/assets/[hash]/'
+  }
+}
 ```
 
 > 在编译时不知道最终输出文件的 publicPath 的情况下，publicPath 可以留空，并且在入口起点文件运行时动态设置。如果你在编译时不知道 publicPath，你可以先忽略它，并且在入口起点设置 **webpack_public_path**。
 
 ```js
-__webpack_public_path__ = myRuntimePublicPath;
+__webpack_public_path__ = myRuntimePublicPath
 
 // 剩余的应用程序入口
 ```
@@ -200,18 +200,18 @@ loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身�
 - 配置（最省事）：在 webpack.config.js 文件中指定 loader。
 
 ```js
-const path = require("path");
+const path = require('path')
 
 const config = {
   output: {
-    filename: "my-first-webpack.bundle.js",
+    filename: 'my-first-webpack.bundle.js'
   },
   module: {
-    rules: [{ test: /\.txt$/, use: "raw-loader" }],
-  },
-};
+    rules: [{ test: /\.txt$/, use: 'raw-loader' }]
+  }
+}
 
-module.exports = config;
+module.exports = config
 ```
 
 以上配置中，对一个单独的 module 对象定义了 rules 属性，里面包含两个必须属性：test 和 use。这告诉 webpack 编译器(compiler) 如下信息：
@@ -222,7 +222,7 @@ module.exports = config;
   可以在 import 语句或任何等效于 "import" 的方式中指定 loader。使用 ! 将资源中的 loader 分开。分开的每个部分都相对于当前目录解析。
 
   ```js
-  import Styles from "style-loader!css-loader?modules!./styles.css";
+  import Styles from 'style-loader!css-loader?modules!./styles.css'
   ```
 
   通过前置所有规则及使用 !，可以对应覆盖到配置中的任意 loader。
@@ -261,45 +261,45 @@ loader 被用于转换某些类型的模块，而插件则可以用于执行范�
 想要使用一个插件，你只需要 require() 它，然后把它添加到 plugins 数组中。多数插件可以通过选项(option)自定义。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。
 
 ```js
-const HtmlWebpackPlugin = require("html-webpack-plugin"); // 通过 npm 安装
-const webpack = require("webpack"); // 用于访问内置插件
+const HtmlWebpackPlugin = require('html-webpack-plugin') // 通过 npm 安装
+const webpack = require('webpack') // 用于访问内置插件
 
 const config = {
   module: {
-    rules: [{ test: /\.txt$/, use: "raw-loader" }],
+    rules: [{ test: /\.txt$/, use: 'raw-loader' }]
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
-};
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })]
+}
 
-module.exports = config;
+module.exports = config
 ```
 
 ```js
-const HtmlWebpackPlugin = require("html-webpack-plugin"); //通过 npm 安装
-const webpack = require("webpack"); //访问内置的插件
-const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin') //通过 npm 安装
+const webpack = require('webpack') //访问内置的插件
+const path = require('path')
 
 const config = {
-  entry: "./path/to/my/entry/file.js",
+  entry: './path/to/my/entry/file.js',
   output: {
-    filename: "my-first-webpack.bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'my-first-webpack.bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: "babel-loader",
-      },
-    ],
+        use: 'babel-loader'
+      }
+    ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    new HtmlWebpackPlugin({ template: "./src/index.html" }),
-  ],
-};
+    new HtmlWebpackPlugin({ template: './src/index.html' })
+  ]
+}
 
-module.exports = config;
+module.exports = config
 ```
 
 ## 剖析
@@ -309,13 +309,13 @@ webpack 插件是一个具有 apply 属性的 JavaScript 对象。apply 属性�
 ConsoleLogOnBuildWebpackPlugin.js
 
 ```js
-const pluginName = "ConsoleLogOnBuildWebpackPlugin";
+const pluginName = 'ConsoleLogOnBuildWebpackPlugin'
 
 class ConsoleLogOnBuildWebpackPlugin {
   apply(compiler) {
     compiler.hooks.run.tap(pluginName, (compilation) => {
-      console.log("webpack 构建过程开始！");
-    });
+      console.log('webpack 构建过程开始！')
+    })
   }
 }
 ```
@@ -329,15 +329,15 @@ compiler hook 的 tap 方法的第一个参数，应该是驼峰式命名的插�
 some-node-script.js
 
 ```js
-const webpack = require("webpack"); //访问 webpack 运行时(runtime)
-const configuration = require("./webpack.config.js");
+const webpack = require('webpack') //访问 webpack 运行时(runtime)
+const configuration = require('./webpack.config.js')
 
-let compiler = webpack(configuration);
-compiler.apply(new webpack.ProgressPlugin());
+let compiler = webpack(configuration)
+compiler.apply(new webpack.ProgressPlugin())
 
 compiler.run(function (err, stats) {
   // ...
-});
+})
 ```
 
 > 以上看到的示例和 webpack 自身运行时(runtime) 极其类似。wepback 源码中隐藏有大量使用示例，你可以用在自己的配置和脚本中。
@@ -348,8 +348,8 @@ compiler.run(function (err, stats) {
 
 ```js
 module.exports = {
-  mode: "production",
-};
+  mode: 'production'
+}
 ```
 
 或者通过命令行传递：
@@ -418,16 +418,16 @@ webpack 配置是标准的 Node.js CommonJS 模块，你可以做到以下事情
 ## 基本配置：
 
 ```js
-var path = require("path");
+var path = require('path')
 
 module.exports = {
-  mode: "development",
-  entry: "./foo.js",
+  mode: 'development',
+  entry: './foo.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "foo.bundle.js",
-  },
-};
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'foo.bundle.js'
+  }
+}
 ```
 
 ### 导出为一个函数
@@ -461,12 +461,12 @@ module.exports = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
-        entry: "./app.js",
+        entry: './app.js'
         /* ... */
-      });
-    }, 5000);
-  });
-};
+      })
+    }, 5000)
+  })
+}
 ```
 
 ### 导出多个配置对象
@@ -477,21 +477,21 @@ module.exports = () => {
 module.exports = [
   {
     output: {
-      filename: "./dist-amd.js",
-      libraryTarget: "amd",
+      filename: './dist-amd.js',
+      libraryTarget: 'amd'
     },
-    entry: "./app.js",
-    mode: "production",
+    entry: './app.js',
+    mode: 'production'
   },
   {
     output: {
-      filename: "./dist-commonjs.js",
-      libraryTarget: "commonjs",
+      filename: './dist-commonjs.js',
+      libraryTarget: 'commonjs'
     },
-    entry: "./app.js",
-    mode: "production",
-  },
-];
+    entry: './app.js',
+    mode: 'production'
+  }
+]
 ```
 
 ### 根据不同语言进行配置
@@ -506,17 +506,17 @@ module.exports = [
   之后就可以使用 TypeScript 书写 webpack 的配置文件了：
 
   ```js
-  import path from "path";
-  import webpack from "webpack";
+  import path from 'path'
+  import webpack from 'webpack'
   const config: webpack.Configuration = {
-    mode: "production",
-    entry: "./foo.js",
+    mode: 'production',
+    entry: './foo.js',
     output: {
-      path: path.resolve(_dirname, "dist"),
-      filename: "foo.bundle.js",
-    },
-  };
-  export default config;
+      path: path.resolve(_dirname, 'dist'),
+      filename: 'foo.bundle.js'
+    }
+  }
+  export default config
   ```
 
   以上示例假定 webpack 版本 >= 2.7，或者，在 tsconfig.json 文件中，具有 esModuleInterop 和 allowSyntheticDefaultImports 这两个新的编译器选项的较新版本 TypeScript。
@@ -575,13 +575,13 @@ module.exports = [
   webpack.config.babel.js
 
   ```js
-  import jsxobj from "jsxobj";
+  import jsxobj from 'jsxobj'
 
   // example of an imported plugin
   const CustomPlugin = (config) => ({
     ...config,
-    name: "custom-plugin",
-  });
+    name: 'custom-plugin'
+  })
 
   export default (
     <webpack target="web" watch mode="production">
@@ -589,8 +589,8 @@ module.exports = [
       <resolve>
         <alias
           {...{
-            react: "preact-compat",
-            "react-dom": "preact-compat",
+            react: 'preact-compat',
+            'react-dom': 'preact-compat'
           }}
         />
       </resolve>
@@ -598,13 +598,13 @@ module.exports = [
         <uglify-js
           opts={{
             compression: true,
-            mangle: false,
+            mangle: false
           }}
         />
         <CustomPlugin foo="bar" />
       </plugins>
     </webpack>
-  );
+  )
   ```
 
   > 如果你在其他地方也使用了 Babel 并且把模块(modules)设置为了 false，那么你要么同时维护两份单独的 .babelrc 文件，要么使用 conts jsxobj = requrie('jsxobj'); 并且使用 moduel.exports 而不是新版本的 import 和 export 语法。这是因为尽管 Node.js 已经支持了许多 ES6 的新特性，然而还无法支持 ES6 模块语法。
@@ -645,9 +645,9 @@ webpack 通过 loader 可以支持各种语言和预处理器编写模块。load
 resolver 是一个库(library)，用于帮助找到模块的绝对路径。一个模块可以作为另一个模块的依赖模块，然后被后者引用，如下：
 
 ```js
-import foo from "path/to/module";
+import foo from 'path/to/module'
 // 或者
-require("path/to/module");
+require('path/to/module')
 ```
 
 所依赖的模块可以是来自应用程序代码或第三方的库(library)。resolver 帮助 webpack 找到 bundle 中需要引入的模块代码，这些代码在包含在每个 require/import 语句中。 当打包模块时，webpack 使用 enhanced-resolve 来解析文件路径
@@ -659,9 +659,9 @@ require("path/to/module");
 - 绝对路径
 
   ```js
-  import "/home/me/file";
+  import '/home/me/file'
 
-  import "C:\\Users\\me\\file";
+  import 'C:\\Users\\me\\file'
   ```
 
   由于我们已经取得文件的绝对路径，因此不需要进一步再做解析。
@@ -669,8 +669,8 @@ require("path/to/module");
 - 相对路径
 
   ```js
-  import "../src/file1";
-  import "./file2";
+  import '../src/file1'
+  import './file2'
   ```
 
   在这种情况下，使用 import 或 require 的资源文件(resource file)所在的目录被认为是上下文目录(context directory)。在 import/require 中给定的相对路径，会添加此上下文路径(context path)，以产生模块的绝对路径(absolute path)。
@@ -678,8 +678,8 @@ require("path/to/module");
 - 模块路径
 
   ```js
-  import "module";
-  import "module/lib/file";
+  import 'module'
+  import 'module/lib/file'
   ```
 
   模块将在 resolve.modules 中指定的所有目录内搜索。 你可以替换初始模块路径，此替换路径通过使用 resolve.alias 配置选项来创建一个别名。
@@ -714,7 +714,7 @@ Loader 解析遵循与文件解析器指定的规则相同的规则。但是 res
   解析 loader 时，用到扩展名(extensions)/后缀(suffixes)。
   如果你想省略 -loader，也就是说只使用 example，则可以使用此选项来实现：
   ```js
-  moduleExtensions: ["-loader"];
+  moduleExtensions: ['-loader']
   ```
 
 ### 缓存
@@ -754,8 +754,8 @@ target 用于告知 webpack 为目标(target)指定一个环境。
 
 ```js
 module.exports = {
-  target: "node",
-};
+  target: 'node'
+}
 ```
 
 在上面例子中，使用 node webpack 会编译为用于「类 Node.js」环境（使用 Node.js 的 require ，而不是使用任意内置模块（如 fs 或 path）来加载 chunk）。
@@ -777,23 +777,23 @@ module.exports = {
 
 ```js
 const options = {
-  target: () => undefined,
-};
+  target: () => undefined
+}
 ```
 
 或者可以使用你想要指定的插件
 
 ```js
-const webpack = require("webpack");
+const webpack = require('webpack')
 
 const options = {
   target: (compiler) => {
     compiler.apply(
       new webpack.JsonpTemplatePlugin(options.output),
-      new webpack.LoaderTargetPlugin("web")
-    );
-  },
-};
+      new webpack.LoaderTargetPlugin('web')
+    )
+  }
+}
 ```
 
 ## 多个 target
@@ -801,26 +801,26 @@ const options = {
 尽管 webpack 不支持向 target 传入多个字符串，你可以通过打包两份分离的配置来创建同构的库：
 
 ```js
-var path = require("path");
+var path = require('path')
 var serverConfig = {
-  target: "node",
+  target: 'node',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "lib.node.js",
-  },
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'lib.node.js'
+  }
   //…
-};
+}
 
 var clientConfig = {
-  target: "web", // <=== 默认是 'web'，可省略
+  target: 'web', // <=== 默认是 'web'，可省略
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "lib.js",
-  },
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'lib.js'
+  }
   //…
-};
+}
 
-module.exports = [serverConfig, clientConfig];
+module.exports = [serverConfig, clientConfig]
 ```
 
 上面的例子将在你的 dist 文件夹下创建 lib.js 和 lib.node.js 文件。

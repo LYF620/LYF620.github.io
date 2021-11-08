@@ -4,10 +4,11 @@ date: 2021-02-09 19:10:42
 tags:
   - 博客 hexo
   - github
-summary: "一篇为小白同伴记录博客建站过程"
-img: "/medias/featureimages/1.jpg"
+summary: '一篇为小白同伴记录博客建站过程'
+img: '/medias/featureimages/1.jpg'
 sitemap: true
 cover: true
+categories: hexo
 ---
 
 ## 搭建环境
@@ -94,6 +95,6 @@ $ hexo s
 ## 哦！恭喜你，你的第一个博客已经搭建好了
 
 根据命令行提示，访问本机 IP:4000 即可，进去之后就是 hexo 的默认界面啦，里面会有一篇经典的 hello world。当然咯，默认的主题，色调都会比较简陋啦，想不想拥有像我一样的漂亮主题？想不想像我一样有一个漂亮的 2d 人物？这里我就不一一 教大家了，贴上链接，大家上手以后就多看看啦。
-[hexo 主题](https://hexo.io/themes/ "https://mdnice.com/")
-[Markdown 中文指南](https://www.markdown.xyz/basic-syntax/ "https://www.markdown.xyz/basic-syntax/")
-[hexo 中文文档](https://hexo.io/zh-cn/docs/ "https://hexo.io/zh-cn/docs/")
+[hexo 主题](https://hexo.io/themes/ 'https://mdnice.com/')
+[Markdown 中文指南](https://www.markdown.xyz/basic-syntax/ 'https://www.markdown.xyz/basic-syntax/')
+[hexo 中文文档](https://hexo.io/zh-cn/docs/ 'https://hexo.io/zh-cn/docs/')

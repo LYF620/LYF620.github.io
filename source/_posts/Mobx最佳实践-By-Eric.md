@@ -10,8 +10,8 @@ summary: 状态管理
 tags:
   - Mobx
   - 状态机
-categories:
-img: "/medias/featureimages/8.jpg"
+categories: Mobx
+img: '/medias/featureimages/8.jpg'
 sitemap: true
 ---
 
@@ -27,54 +27,54 @@ sitemap: true
 
 ```ts
 // 用class使用mobx
-import { observable, action, runInAction } from "mobx";
+import { observable, action, runInAction } from 'mobx'
 
 // 声明被observer的属性
 export class BaseItem {
-  @observable id: string;
-  @observable name: string;
+  @observable id: string
+  @observable name: string
 }
 
 export class Item extends BaseItem {
   // 将属性传给构造函数
   constructor(props?: Partial<BaseItem>) {
-    super();
+    super()
 
     if (props) {
-      this.update(props);
+      this.update(props)
     }
   }
 
   // 使用mobx内置函数action修改更新状态
   @action
   update(props: Partial<BaseItem>) {
-    Object.assign(this, props);
+    Object.assign(this, props)
   }
 
   // 根据业务fetch数据，更新给observer状态
   fetch = async () => {
     //mock数据
     const data = {
-      id: "1",
-      name: "eric",
-    };
+      id: '1',
+      name: 'eric'
+    }
 
     // runInAction 工具函数,将‘“最终的”修改放入一个异步动作中
     runInAction(() => {
-      this.update(data);
-    });
-  };
+      this.update(data)
+    })
+  }
 }
 ```
 
 这样一个 mobx 类就声明好了，在使用时，我们只需要这样：
 
 ```js
-import { Item } from "./item";
+import { Item } from './item'
 // mobx类实例化
-const item = new Item();
+const item = new Item()
 // 获取数据
-item.fetch();
+item.fetch()
 ```
 
 再这样直接使用就可以啦：
@@ -114,38 +114,38 @@ interface UserGroup {
 
 ```js
 //像上面的例子一样，先创建class Item 管理list中每一项
-import { observable, action, runInAction } from "mobx";
+import { observable, action, runInAction } from 'mobx'
 
 export class BaseItem {
-  @observable id: string;
-  @observable name: string;
+  @observable id: string
+  @observable name: string
 }
 
 export class Item extends BaseItem {
   constructor(props?: Partial<BaseItem>) {
-    super();
+    super()
 
     if (props) {
-      this.update(props);
+      this.update(props)
     }
   }
 
   @action
   update(props: Partial<BaseItem>) {
-    Object.assign(this, props);
+    Object.assign(this, props)
   }
 
   fetch = async () => {
     //mock数据
     const data = {
-      id: "1",
-      name: "eric",
-    };
+      id: '1',
+      name: 'eric'
+    }
 
     runInAction(() => {
-      this.update(data);
-    });
-  };
+      this.update(data)
+    })
+  }
 }
 ```
 
@@ -206,7 +206,7 @@ export class Model extends BaseModel {
 
 ## 第三方库 mobx-react-lite
 
-详细使用方式可以看看这个[npm mobx-react-lite](https://www.npmjs.com/package/mobx-react-lite "https://www.npmjs.com/package/mobx-react-lite")
+详细使用方式可以看看这个[npm mobx-react-lite](https://www.npmjs.com/package/mobx-react-lite 'https://www.npmjs.com/package/mobx-react-lite')
 
 这里我们使用该库的 useLocalStore 作为页面级别的状态管理
 
@@ -222,23 +222,23 @@ function Measurement({ unit }) {
     unit, // 属性初始化
     // unit的set方法
     setUnit(val) {
-      this.unit = val;
+      this.unit = val
     },
     length: 0,
     // 这里的值类似于mobx的computed值，即在相关数据发生变化时自动更新的值
     get lengthWithUnit() {
       //get方法必须拥有返回值
-      return this.unit === "inch"
+      return this.unit === 'inch'
         ? `${this.length * 2.54} inch`
-        : `${this.length} cm`;
-    },
-  }));
+        : `${this.length} cm`
+    }
+  }))
 
   useEffect(() => {
-    state.unit = unit;
-  }, [unit]);
+    state.unit = unit
+  }, [unit])
 
-  return <h1>{state.lengthWithUnit}</h1>;
+  return <h1>{state.lengthWithUnit}</h1>
 }
 ```
 
@@ -293,8 +293,8 @@ export function createStore<T extends (...args: any) => any>(
 在 TestPage/store/index.ts 文件中使用 useLocalStore 提供全局状态管理
 
 ```js
-import { createStore } from "@/utils/store";
-import { useLocalStore } from "mobx-react-lite";
+import { createStore } from '@/utils/store'
+import { useLocalStore } from 'mobx-react-lite'
 
 export function useModel() {
   const store = useLocalStore(() => ({
@@ -302,59 +302,59 @@ export function useModel() {
     model: new Model(),
     loading: false,
     setLoading(val) {
-      this.loading = val;
-    },
-  }));
+      this.loading = val
+    }
+  }))
 
-  return store;
+  return store
 }
 
-const store = createStore(useModel);
+const store = createStore(useModel)
 
-export const Provider = store.Provider;
-export const Context = store.Context;
-export const useStore = store.useStore;
+export const Provider = store.Provider
+export const Context = store.Context
+export const useStore = store.useStore
 ```
 
 此时的 store 已经声明好了，其包含 Provider、Context、useStore，此时最后一步，我们在 TestPage 的首页 index.ts 使用 context 的属性，为 TestPage 提供全局数据
 
 ```js
-import React from "react";
-import styled from "styled-components";
-import { observer } from "mobx-react-lite";
-import { Context, useModel, useStore } from "./store";
+import React from 'react'
+import styled from 'styled-components'
+import { observer } from 'mobx-react-lite'
+import { Context, useModel, useStore } from './store'
 
-const StyledLayout = styled.div``;
+const StyledLayout = styled.div``
 
 export const Component = observer(function Component() {
-  return <StyledLayout></StyledLayout>;
-});
+  return <StyledLayout></StyledLayout>
+})
 
 export default function Mobx() {
-  const model = useModel();
+  const model = useModel()
 
   return (
     <Context.Provider value={model}>
       <Component />
     </Context.Provider>
-  );
+  )
 }
 ```
 
 做完这些，我们的 TestPage 就拥有了一个管理整个组件的状态机，在子页面中使用时，如下：
 
 ```js
-import React from "react";
-import styled from "styled-components";
-import { observer } from "mobx-react-lite";
-import { Context, useModel, useStore } from "./store";
+import React from 'react'
+import styled from 'styled-components'
+import { observer } from 'mobx-react-lite'
+import { Context, useModel, useStore } from './store'
 
-const StyledLayout = styled.div``;
+const StyledLayout = styled.div``
 
 export const Component = observer(function Component() {
   //useStore即使用useContext，返回context的当前值
-  const store = useStore();
+  const store = useStore()
   //声明的store就包含useLoaclStore的所有属性和方法了，在页面中直接使用其数据渲染即可，并且数据会基于mobx进行状态更新
-  return <StyledLayout></StyledLayout>;
-});
+  return <StyledLayout></StyledLayout>
+})
 ```

@@ -4,6 +4,9 @@ menu:
   Index:
     url: /
     icon: fas fa-home
+  每日一题:
+    url: /codeExercise
+    icon: fas fa-book
   Tags:
     url: /tags
     icon: fas fa-tags
@@ -82,10 +85,10 @@ music:
   id: 503838841 #require	song id / playlist id / album id / search keyword
   fixed: true # 开启吸底模式
   autoplay: false # 是否自动播放
-  theme: "#42b983"
-  loop: "all" # 音频循环播放, 可选值: 'all', 'one', 'none'
-  order: "random" # 音频循环顺序, 可选值: 'list', 'random'
-  preload: "auto" # 预加载，可选值: 'none', 'metadata', 'auto'
+  theme: '#42b983'
+  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random' # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true # 列表默认折叠
   hideLrc: true # 隐藏歌词
@@ -101,9 +104,9 @@ video:
   thumbnails:
   height: # 如：400
   autoplay: false # 是否自动播放
-  theme: "#42b983"
+  theme: '#42b983'
   loop: false # 是否循环播放
-  preload: "auto" # 预加载，可选值: 'none', 'metadata', 'auto'
+  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7
 
 # Whether to display the title of the recommended posts
@@ -215,17 +218,17 @@ myProjects:
   data:
     hexo-theme-matery:
       icon: fas fa-file-alt
-      iconBackground: "linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)"
+      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
       url: http://github.com/blinkfox/hexo-theme-matery
       desc: This is a Hexo blog theme with 'Material Design' and responsive design.
     Fenix:
       icon: fas fa-database
-      iconBackground: "linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)"
+      iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
       url: https://github.com/blinkfox/fenix
       desc: 这是 Spring Data JPA 复杂或动态 SQL 查询的扩展库。
     typora-vue-theme:
       icon: fas fa-file-alt
-      iconBackground: "linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)"
+      iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
       url: https://github.com/blinkfox/typora-vue-theme
       desc: This is a typora theme inspired by Vue document style.
 
@@ -236,25 +239,25 @@ mySkills:
   enable: true
   data:
     JavaScript:
-      background: "linear-gradient(to right, #9900FF 0%, #CC66FF 100%)"
+      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
       percent: 80%
     HTML5:
-      background: "linear-gradient(to right, #2196F3 0%, #42A5F5 100%)"
+      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 100%
     CSS:
-      background: "linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)"
+      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 100%
     React:
-      background: "linear-gradient(to right, #7800FF 0%, #4866FF 100%)"
+      background: 'linear-gradient(to right, #7800FF 0%, #4866FF 100%)'
       percent: 80%
     MYSQL:
-      background: "linear-gradient(to right, #4CAF50 0%, #81C784 100%)"
+      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 80%
     程序设计:
-      background: "linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)"
+      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 75%
     运维:
-      background: "linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)"
+      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 55%
 
 # config gallery of my photos in about page.
@@ -326,9 +329,9 @@ valine:
   notify: false
   verify: false
   visitor: true
-  avatar: "monsterid" # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  avatar: 'monsterid' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: "大家可以在这里评论哦" # Comment Box placeholder
+  placeholder: '大家可以在这里评论哦' # Comment Box placeholder
   background: /medias/comment_bg.png
   coolpushkey:
 
@@ -556,7 +559,7 @@ subtitle:
 # 手机二级菜单.
 navMenu:
   mleft: false # 二级侧栏子菜单是否对齐左边
-  bgColor: " " # 二级侧栏子菜单背景颜色,留空即为全局背景色
+  bgColor: ' ' # 二级侧栏子菜单背景颜色,留空即为全局背景色
 
 # 网页预加载.
 instantpage:
@@ -588,7 +591,7 @@ jsDelivr:
 # 网站背景图
 background:
   enable: false
-  url: "https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg"
+  url: 'https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg'
 
 # 说说 https://artitalk.js.org/
 artitalk:

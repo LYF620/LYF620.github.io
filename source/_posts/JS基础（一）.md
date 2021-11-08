@@ -4,11 +4,11 @@ date: 2021-03-10 19:17:12
 mathjax: true
 password:
 cover: true
-summary: "回顾JS"
+summary: '回顾JS'
 tags:
   - JS基础
-categories:
-img: "/medias/featureimages/2.jpg"
+categories: JavaScript
+img: '/medias/featureimages/2.jpg'
 sitemap: true
 ---
 
@@ -21,18 +21,18 @@ sitemap: true
 - 对于基本类型来说，如果使用字面量的方式，那么这个变量值只是字面量，只有在必要时才会转换为对应的类型。
 
 ```js
-let a = 111; // 此时a只是一个字面量，并不是number类型
-a.toString(); // 使用时候才会转换为对象类型
+let a = 111 // 此时a只是一个字面量，并不是number类型
+a.toString() // 使用时候才会转换为对象类型
 ```
 
 > 对象（Object）是引用类型，在使用过程中会遇到深浅拷贝的问题
 
 ```js
 //浅拷贝
-let a = { name: "FE" }; // 此时a只是一个字面量，并不是number类型
-let a = b;
-b.name = "EF";
-console.log(a.name); // EF
+let a = { name: 'FE' } // 此时a只是一个字面量，并不是number类型
+let a = b
+b.name = 'EF'
+console.log(a.name) // EF
 ```
 
 JS 原生不支持深拷贝，object.asign 和{...obj}都属于浅拷贝
@@ -47,12 +47,12 @@ JS 原生不支持深拷贝，object.asign 和{...obj}都属于浅拷贝
 let a = {
   reg: /^asd$/,
   age: undefined,
-  sex: Symbol("male"),
+  sex: Symbol('male'),
   jobs: function () {},
-  name: "yck",
-};
-let b = JSON.parse(JSON.stringify(a));
-console.log(b); // {name: "yck"，reg : {}}
+  name: 'yck'
+}
+let b = JSON.parse(JSON.stringify(a))
+console.log(b) // {name: "yck"，reg : {}}
 ```
 
 - 循环引用会报错
@@ -78,7 +78,7 @@ console.log(obj,cp);
 
 ```js
 //深拷贝
-let b = JSON.parse(JSON.stringify(a));
+let b = JSON.parse(JSON.stringify(a))
 ```
 
 > > 递归实现 JS 深拷贝：思想非常简单，对于简单类型，直接复制。对于引用类型，递归复制它的每一个属性。
@@ -90,30 +90,30 @@ let b = JSON.parse(JSON.stringify(a));
 
 ```js
 function deepCopy(target) {
-  let copyed_objs = []; //此数组解决了循环引用和相同引用的问题，它存放已经递归到的目标对象
+  let copyed_objs = [] //此数组解决了循环引用和相同引用的问题，它存放已经递归到的目标对象
   function _deepCopy(target) {
-    if (typeof target !== "object" || !target) {
-      return target;
+    if (typeof target !== 'object' || !target) {
+      return target
     }
     for (let i = 0; i < copyed_objs.length; i++) {
       if (copyed_objs[i].target === target) {
-        return copyed_objs[i].copyTarget;
+        return copyed_objs[i].copyTarget
       }
     }
-    let obj = {};
+    let obj = {}
     if (Array.isArray(target)) {
-      obj = []; //处理target是数组的情况
+      obj = [] //处理target是数组的情况
     }
-    copyed_objs.push({ target: target, copyTarget: obj });
+    copyed_objs.push({ target: target, copyTarget: obj })
     Object.keys(target).forEach((key) => {
       if (obj[key]) {
-        return;
+        return
       }
-      obj[key] = _deepCopy(target[key]);
-    });
-    return obj;
+      obj[key] = _deepCopy(target[key])
+    })
+    return obj
   }
-  return _deepCopy(target);
+  return _deepCopy(target)
 }
 ```
 
@@ -124,26 +124,26 @@ copyed_objs 这个数组存放的是已经递归过的目标对象。在递归�
 > typeof 对于基本类型，除了 null 都可以显示正确的类型
 
 ```js
-typeof 1; //'number'
-typeof "1"; //'string'
-typeof undefined; //'undefined'
-typeof true; //'boolean'
-typeof symbol(); //'symbol'
-typeof b; //'undefined'
+typeof 1 //'number'
+typeof '1' //'string'
+typeof undefined //'undefined'
+typeof true //'boolean'
+typeof symbol() //'symbol'
+typeof b //'undefined'
 ```
 
 > typeof 对于对象，除了函数都会显示 object
 
 ```js
-typeof []; //'object'
-typeof {}; //'object'
-typeof console.log(); //'function'
+typeof [] //'object'
+typeof {} //'object'
+typeof console.log() //'function'
 ```
 
 > 对于 null 来说，虽然他是基本类型，但是会显示 object
 
 ```js
-typeof null; //'object'
+typeof null //'object'
 ```
 
 > PS：为什么会出现这种情况呢？因为在 JS 的最初版本中，使用的是 32 位系统，为了性能考虑使用低位存储了变量的类型信息，000 开头代表是对象，然而 null 表示为全零，所以将它错误的判断为 object 。虽然现在的内部类型判断代码已经改变了，但是对于这个 Bug 却是一直流传下来。
@@ -151,16 +151,16 @@ typeof null; //'object'
 - 如果我们想获得一个变量的正确类型，可以通过 Object.prototype.toString.call(xx)。这样我们就可以获得类似 [object Type] 的字符串
 
 ```js
-let a;
+let a
 // 我们也可以这样判断 undefined
-a === undefined;
+a === undefined
 // 但是 undefined 不是保留字，能够在低版本浏览器被赋值
-let undefined = 1;
+let undefined = 1
 // 这样判断就会出错
 // 所以可以用下面的方式来判断，并且代码量更少
 // 因为 void 后面随便跟上一个组成表达式
 // 返回就是 undefined
-a === void 0;
+a === void 0
 ```
 
 > null 和 undefined 的区别
@@ -210,9 +210,9 @@ x // undefined
 ```js
 const obj = {
   valueOf() {
-    return "";
-  },
-};
+    return ''
+  }
+}
 ```
 
 ### 四则运算符

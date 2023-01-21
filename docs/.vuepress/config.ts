@@ -6,6 +6,7 @@ export default defineUserConfig({
   base: '/',
   lang: '中文',
   title: 'Eric的学习空间',
+  head: [['link', { rel: 'icon', href: '/assets/favicon.png' }]],
   description: '欢迎来到Eric的个人星球',
   markdown: {
     code: {
@@ -23,15 +24,15 @@ export default defineUserConfig({
          link: '/base/index.md',
       },
       {
-        text: '🧑‍🦱前端-筑基',
-        link: '/contact',
+        text: '🧑‍🦱FE-筑基',
+        link: '/junior/index.md',
       },
       {
-        text: '🧑前端-金丹',
-        link: '/contact',
+        text: '🧑FE-金丹',
+        link: '/middle/index.md',
       },
       {
-        text: '🧑‍🦲前端-元婴',
+        text: '🧑‍🦲FE-元婴',
         link: '/contact',
       },
       {
@@ -68,7 +69,7 @@ export default defineUserConfig({
       }],
       "/junior": [
         {
-          text: '前端入门-筑基',
+          text: 'FE-筑基',
           children: [
             {
               text: '浏览器',
@@ -77,13 +78,36 @@ export default defineUserConfig({
               text: 'ES6',
             },
             {
-              text: 'Fe框架-UI',
+              text: 'FE框架-UI',
             },
             {
               text: '状态管理',
             },
             {
               text: '构建打包',
+            },
+          ]
+        },
+      ],
+       "/middle": [
+        {
+          text: 'FE-金丹',
+          children: [
+            {
+              text: 'React',
+              link: '/middle/react/index.md',
+              children: [
+                {
+                  text: 'React发展历程',
+                  link: '/middle/react/development.md',
+                }
+              ]
+            },
+            {
+              text: 'Vue',
+            },
+             {
+              text: '组件库',
             },
           ]
         },

@@ -8,11 +8,6 @@ export default defineUserConfig({
   title: 'Eric的学习空间',
   head: [['link', { rel: 'icon', href: '/assets/favicon.png' }]],
   description: '欢迎来到Eric的个人星球',
-  markdown: {
-    code: {
-      lineNumbers:false
-    }
-  },
   theme: defaultTheme({
     // 在这里进行配置
     logo: '/assets/logo.png',
@@ -36,6 +31,10 @@ export default defineUserConfig({
         link: '/contact',
       },
       {
+        text: '🙋🏻‍♂️每日一题',
+        link: '/dailyExercise/index.md',
+      },
+      {
         text: '🍌个盆友',
         link: '/contact',
       },
@@ -48,13 +47,7 @@ export default defineUserConfig({
           // SidebarItem
           {
             text: '网络',
-            children: [{
-              text: '网络杂烩-I',
-              link: '/base/net/net-1.md',
-            },{
-              text: '网络杂烩-II',
-              link: '/base/net/net-2.md',
-            }],
+            children: ['/base/net/net-1.md','/base/net/net-2.md'],
           },
           {
             text: '数据库',
@@ -89,18 +82,16 @@ export default defineUserConfig({
           ]
         },
       ],
-       "/middle": [
+      "/middle": [
         {
           text: 'FE-金丹',
+          collapsible: true,
           children: [
             {
               text: 'React',
               link: '/middle/react/index.md',
               children: [
-                {
-                  text: 'React发展历程',
-                  link: '/middle/react/development.md',
-                }
+                '/middle/react/development.md'
               ]
             },
             {
@@ -111,7 +102,10 @@ export default defineUserConfig({
             },
           ]
         },
-      ]
+      ],
+      "/dailyExercise": [
+        '/dailyExercise/index.md'
+      ],
     }
 
   }),

@@ -28,7 +28,7 @@ export default defineUserConfig({
       },
       {
         text: '🧑‍🦲FE-元婴',
-        link: '/contact',
+        link: '/high/microFe/index.md',
       },
       {
         text: '🙋🏻‍♂️每日一题',
@@ -99,6 +99,22 @@ export default defineUserConfig({
             },
              {
               text: '组件库',
+            },
+          ]
+        },
+      ],
+      "/high": [
+        {
+          text: 'FE-元婴',
+          collapsible: true,
+          children: [
+            {
+              text: '微前端',
+              link: '/high/microFe/index.md',
+            },
+            {
+              text: '微前端知识面扩展',
+              link: '/high/microFe/base.md',
             },
           ]
         },
